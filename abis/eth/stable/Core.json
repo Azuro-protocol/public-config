@@ -1,5 +1,115 @@
 [
   {
+    "inputs": [],
+    "name": "BigDifference",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CantAcceptBet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionAlreadyCreated",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionAlreadyResolved",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionNotExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionNotStarted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionStarted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionStopped",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DistantFuture",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FlagAlreadySet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectParams",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotEnoughLiquidity",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyLP",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyMaintainer",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyOracle",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SameOutcomes",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SmallBet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SmallOdds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongDataFormat",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongOutcome",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroOdds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroTimestamp",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {

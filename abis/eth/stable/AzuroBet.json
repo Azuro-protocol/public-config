@@ -1,5 +1,10 @@
 [
   {
+    "inputs": [],
+    "name": "OnlyLP",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {

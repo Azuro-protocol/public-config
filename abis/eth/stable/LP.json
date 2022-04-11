@@ -1,5 +1,65 @@
 [
   {
+    "inputs": [],
+    "name": "AmountMustNotBeZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionStarted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LiquidityNotRequested",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoDAOReward",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoWinNoPrize",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotEnoughFrozenLiquidity",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotEnoughReserves",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyBetOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyCore",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PaymentLocked",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PeriodNotPassed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongToken",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -424,7 +484,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "addr",
+        "name": "newAzuroBet",
         "type": "address"
       }
     ],
@@ -437,7 +497,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "addr",
+        "name": "newCore",
         "type": "address"
       }
     ],
