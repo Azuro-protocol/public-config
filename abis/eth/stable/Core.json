@@ -41,11 +41,6 @@
   },
   {
     "inputs": [],
-    "name": "DistantFuture",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "FlagAlreadySet",
     "type": "error"
   },
@@ -544,6 +539,11 @@
         "internalType": "enum ICore.conditionState",
         "name": "state",
         "type": "uint8"
+      },
+      {
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
       }
     ],
     "stateMutability": "view",
@@ -693,14 +693,14 @@
             "type": "uint128"
           },
           {
-            "internalType": "uint64[2]",
-            "name": "outcomes",
-            "type": "uint64[2]"
-          },
-          {
             "internalType": "bytes32",
             "name": "ipfsHash",
             "type": "bytes32"
+          },
+          {
+            "internalType": "uint64[2]",
+            "name": "outcomes",
+            "type": "uint64[2]"
           },
           {
             "internalType": "uint128",
@@ -721,6 +721,11 @@
             "internalType": "enum ICore.conditionState",
             "name": "state",
             "type": "uint8"
+          },
+          {
+            "internalType": "uint48",
+            "name": "leaf",
+            "type": "uint48"
           }
         ],
         "internalType": "struct ICore.Condition",
@@ -1317,9 +1322,9 @@
         "type": "bool"
       },
       {
-        "internalType": "uint256",
+        "internalType": "uint128",
         "name": "amount",
-        "type": "uint256"
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",
