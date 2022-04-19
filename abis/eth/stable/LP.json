@@ -26,7 +26,7 @@
   },
   {
     "inputs": [],
-    "name": "NoDAOReward",
+    "name": "NoDaoReward",
     "type": "error"
   },
   {
@@ -128,6 +128,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newAzuroBet",
+        "type": "address"
+      }
+    ],
+    "name": "AzuroBetChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "better",
@@ -155,11 +168,11 @@
       {
         "indexed": false,
         "internalType": "uint128",
-        "name": "newDAOFee",
+        "name": "newDaoFee",
         "type": "uint128"
       }
     ],
-    "name": "DAORewardChanged",
+    "name": "DaoRewardChanged",
     "type": "event"
   },
   {
@@ -218,7 +231,7 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "requestedValueLP",
+        "name": "requestedValueLp",
         "type": "uint256"
       }
     ],
@@ -237,7 +250,7 @@
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "betID",
+        "name": "betId",
         "type": "uint256"
       },
       {
@@ -356,19 +369,6 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "newAzuroBet",
-        "type": "address"
-      }
-    ],
-    "name": "azuroBetChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
         "name": "wallet",
         "type": "address"
       },
@@ -472,7 +472,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "conditionID",
+        "name": "conditionId",
         "type": "uint256"
       },
       {
@@ -482,7 +482,7 @@
       },
       {
         "internalType": "uint64",
-        "name": "outcomeID",
+        "name": "outcomeId",
         "type": "uint64"
       },
       {
@@ -537,11 +537,11 @@
     "inputs": [
       {
         "internalType": "uint128",
-        "name": "newDAOFee",
+        "name": "newDaoFee",
         "type": "uint128"
       }
     ],
-    "name": "changeDAOReward",
+    "name": "changeDaoReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -561,7 +561,7 @@
   },
   {
     "inputs": [],
-    "name": "claimDAOReward",
+    "name": "claimDaoReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -613,11 +613,11 @@
   },
   {
     "inputs": [],
-    "name": "getFeeDecimals",
+    "name": "getFeeMultiplier",
     "outputs": [
       {
         "internalType": "uint128",
-        "name": "feeDecimals",
+        "name": "feeMultiplier",
         "type": "uint128"
       }
     ],
@@ -909,12 +909,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_oracle",
+        "name": "oracle",
         "type": "address"
       },
       {
         "internalType": "uint128",
-        "name": "_amount",
+        "name": "amount",
         "type": "uint128"
       }
     ],
@@ -1050,7 +1050,7 @@
   },
   {
     "inputs": [],
-    "name": "totalDAORewards",
+    "name": "totalDaoRewards",
     "outputs": [
       {
         "internalType": "uint128",

@@ -1,7 +1,7 @@
 [
   {
     "inputs": [],
-    "name": "OnlyLP",
+    "name": "OnlyLp",
     "type": "error"
   },
   {
@@ -58,6 +58,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "lp",
+        "type": "address"
+      }
+    ],
+    "name": "LpChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
@@ -96,19 +109,6 @@
       }
     ],
     "name": "Transfer",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "lp_",
-        "type": "address"
-      }
-    ],
-    "name": "lpChanged",
     "type": "event"
   },
   {
@@ -165,7 +165,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "tokenId_",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -197,7 +197,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "tokenId_",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -216,7 +216,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "owner_",
+        "name": "owner",
         "type": "address"
       }
     ],
@@ -279,12 +279,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "account_",
+        "name": "account",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "core_",
+        "name": "core",
         "type": "address"
       }
     ],
@@ -323,7 +323,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "tokenId_",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -418,7 +418,7 @@
     "inputs": [
       {
         "internalType": "string",
-        "name": "uri_",
+        "name": "uri",
         "type": "string"
       }
     ],
@@ -431,11 +431,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "lp_",
+        "name": "lp",
         "type": "address"
       }
     ],
-    "name": "setLP",
+    "name": "setLp",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -444,7 +444,7 @@
     "inputs": [
       {
         "internalType": "bytes4",
-        "name": "interfaceId_",
+        "name": "interfaceId",
         "type": "bytes4"
       }
     ],
@@ -476,7 +476,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "index_",
+        "name": "index",
         "type": "uint256"
       }
     ],
@@ -495,12 +495,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "owner_",
+        "name": "owner",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "index_",
+        "name": "index",
         "type": "uint256"
       }
     ],
