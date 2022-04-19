@@ -11,6 +11,16 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectPercent",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "LeafNotExist",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "LiquidityIsLocked",
     "type": "error"
   },
@@ -638,6 +648,45 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "node",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "begin",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "end",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "l",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "r",
+        "type": "uint48"
+      }
+    ],
+    "name": "getLeavesAmount",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "getOracleFee",
     "outputs": [
@@ -648,6 +697,25 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "fromNumber",
+        "type": "uint48"
+      }
+    ],
+    "name": "getParent",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "parentNumber",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -845,6 +913,24 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
+      }
+    ],
+    "name": "removeLimit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1122,13 +1208,26 @@
     "outputs": [
       {
         "internalType": "uint64",
-        "name": "timestamp",
+        "name": "updateId",
         "type": "uint64"
       },
       {
         "internalType": "uint128",
         "name": "amount",
         "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "updateId",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
       }
     ],
     "stateMutability": "view",
