@@ -1,12 +1,22 @@
 [
   {
     "inputs": [],
+    "name": "BetNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "BigDifference",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "CantAcceptBet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CantChangeFlag",
     "type": "error"
   },
   {
@@ -32,11 +42,6 @@
   {
     "inputs": [],
     "name": "ConditionStarted",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "ConditionStopped_",
     "type": "error"
   },
   {
@@ -335,7 +340,7 @@
   },
   {
     "inputs": [],
-    "name": "allConditionStopped",
+    "name": "allConditionsStopped",
     "outputs": [
       {
         "internalType": "bool",
