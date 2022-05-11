@@ -416,11 +416,6 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
-      },
-      {
         "internalType": "uint128",
         "name": "initReserve",
         "type": "uint128"
@@ -837,11 +832,6 @@
         "internalType": "uint128",
         "name": "amount",
         "type": "uint128"
-      },
-      {
-        "internalType": "uint48",
-        "name": "leaf",
-        "type": "uint48"
       }
     ],
     "name": "lockReserve",
@@ -1045,6 +1035,24 @@
       }
     ],
     "name": "safeTransferFrom",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
+    "name": "sendOracleReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

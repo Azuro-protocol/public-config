@@ -75,17 +75,6 @@
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint64",
-        "name": "waitTime",
-        "type": "uint64"
-      }
-    ],
-    "name": "ResolveTooEarly",
-    "type": "error"
-  },
-  {
     "inputs": [],
     "name": "SameOutcomes",
     "type": "error"
