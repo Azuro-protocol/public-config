@@ -442,13 +442,18 @@
       },
       {
         "internalType": "uint128",
-        "name": "profitReserve",
+        "name": "finalReserve",
         "type": "uint128"
       },
       {
         "internalType": "uint48",
         "name": "leaf",
         "type": "uint48"
+      },
+      {
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
       }
     ],
     "name": "addReserve",
@@ -724,19 +729,6 @@
   },
   {
     "inputs": [],
-    "name": "getFeeMultiplier",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "feeMultiplier",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "getLeaf",
     "outputs": [
       {
@@ -781,19 +773,6 @@
       {
         "internalType": "uint128",
         "name": "amount",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getOracleFee",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "fee",
         "type": "uint128"
       }
     ],
@@ -1102,24 +1081,6 @@
       }
     ],
     "name": "safeTransferFrom",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
-      },
-      {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      }
-    ],
-    "name": "sendOracleReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
