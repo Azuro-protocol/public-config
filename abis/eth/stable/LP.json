@@ -46,17 +46,7 @@
   },
   {
     "inputs": [],
-    "name": "NoWinNoPrize",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "NotEnoughReserves",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "OnlyBetOwner",
     "type": "error"
   },
   {
@@ -84,6 +74,38 @@
     "inputs": [],
     "name": "WrongToken",
     "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "newAffiliateFee",
+        "type": "uint128"
+      }
+    ],
+    "name": "AffiliateRewardChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "affiliate",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "AffiliateRewarded",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -139,22 +161,9 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "newAzuroBet",
-        "type": "address"
-      }
-    ],
-    "name": "AzuroBetChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "address",
-        "name": "better",
+        "name": "bettor",
         "type": "address"
       },
       {
@@ -170,7 +179,7 @@
         "type": "uint256"
       }
     ],
-    "name": "BetterWin",
+    "name": "BettorWin",
     "type": "event"
   },
   {
@@ -268,19 +277,25 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "owner",
+        "name": "bettor",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "affiliate",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "betId",
+        "name": "conditionId",
         "type": "uint256"
       },
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "uint256",
-        "name": "conditionId",
+        "name": "tokenId",
         "type": "uint256"
       },
       {
@@ -297,9 +312,9 @@
       },
       {
         "indexed": false,
-        "internalType": "uint256",
+        "internalType": "uint64",
         "name": "odds",
-        "type": "uint256"
+        "type": "uint64"
       },
       {
         "indexed": false,
@@ -454,11 +469,29 @@
         "internalType": "address",
         "name": "oracle",
         "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "affiliated",
+        "type": "bool"
       }
     ],
     "name": "addReserve",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "affiliateFee",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -477,19 +510,6 @@
     "name": "approve",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "azuroBet",
-    "outputs": [
-      {
-        "internalType": "contract IAzuroBet",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -513,6 +533,11 @@
   },
   {
     "inputs": [
+      {
+        "internalType": "address",
+        "name": "affiliate",
+        "type": "address"
+      },
       {
         "internalType": "uint256",
         "name": "conditionId",
@@ -540,18 +565,17 @@
       }
     ],
     "name": "bet",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
+      {
+        "internalType": "address",
+        "name": "affiliate",
+        "type": "address"
+      },
       {
         "internalType": "uint256",
         "name": "conditionId",
@@ -574,25 +598,19 @@
       }
     ],
     "name": "betNative",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "payable",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "newAzuroBet",
-        "type": "address"
+        "internalType": "uint128",
+        "name": "newAffiliateFee",
+        "type": "uint128"
       }
     ],
-    "name": "changeAzuroBet",
+    "name": "changeAffiliateReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -671,6 +689,31 @@
       }
     ],
     "name": "changeWithdrawTimeout",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "claimAffiliateReward",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "claimAffiliateReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -835,11 +878,6 @@
       {
         "internalType": "address",
         "name": "token_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "azuroBetAddress",
         "type": "address"
       }
     ],
@@ -1319,11 +1357,6 @@
     ],
     "name": "viewPayout",
     "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      },
       {
         "internalType": "uint128",
         "name": "",
