@@ -196,6 +196,12 @@
       {
         "indexed": false,
         "internalType": "uint256",
+        "name": "oracleCondId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
         "name": "conditionId",
         "type": "uint256"
       },
@@ -452,7 +458,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "oracleConditionId",
+        "name": "oracleCondId",
         "type": "uint256"
       }
     ],
@@ -1209,7 +1215,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "conditionId",
+        "name": "oracleCondId",
         "type": "uint256"
       },
       {
