@@ -10,6 +10,17 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "waitTime",
+        "type": "uint64"
+      }
+    ],
+    "name": "ClaimTimeout",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "ConditionStarted",
     "type": "error"
@@ -42,6 +53,11 @@
   {
     "inputs": [],
     "name": "NoLiquidity",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoOracleReward",
     "type": "error"
   },
   {
@@ -178,6 +194,19 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "uint64",
+        "name": "newClaimTimeout",
+        "type": "uint64"
+      }
+    ],
+    "name": "ClaimTimeoutChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "uint128",
         "name": "newDaoFee",
         "type": "uint128"
@@ -196,16 +225,16 @@
         "type": "address"
       },
       {
+        "indexed": true,
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
+      },
+      {
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint48",
-        "name": "leaf",
-        "type": "uint48"
       }
     ],
     "name": "LiquidityAdded",
@@ -219,6 +248,12 @@
         "internalType": "address",
         "name": "account",
         "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
       },
       {
         "indexed": false,
@@ -449,11 +484,6 @@
         "internalType": "uint48",
         "name": "leaf",
         "type": "uint48"
-      },
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
       }
     ],
     "name": "addReserve",
@@ -644,6 +674,19 @@
   {
     "inputs": [
       {
+        "internalType": "uint64",
+        "name": "newClaimTimeout",
+        "type": "uint64"
+      }
+    ],
+    "name": "changeClaimTimeout",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "newCore",
         "type": "address"
@@ -724,6 +767,32 @@
     "name": "claimDaoReward",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      }
+    ],
+    "name": "claimOracleReward",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "claimTimeout",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -917,6 +986,32 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "lastClaimDao",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastClaimOracle",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint128",
@@ -1053,6 +1148,32 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "realDaoRewards",
+    "outputs": [
+      {
+        "internalType": "int128",
+        "name": "",
+        "type": "int128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "realOracleRewards",
+    "outputs": [
+      {
+        "internalType": "int128",
+        "name": "",
+        "type": "int128"
       }
     ],
     "stateMutability": "view",
