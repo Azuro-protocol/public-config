@@ -225,16 +225,16 @@
         "type": "address"
       },
       {
-        "indexed": true,
-        "internalType": "uint48",
-        "name": "leaf",
-        "type": "uint48"
-      },
-      {
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
       }
     ],
     "name": "LiquidityAdded",
