@@ -1,6 +1,11 @@
 [
   {
     "inputs": [],
+    "name": "ActiveConditions",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "AmountMustNotBeZero",
     "type": "error"
   },
@@ -78,11 +83,6 @@
   {
     "inputs": [],
     "name": "OnlyCore",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "PaymentLocked",
     "type": "error"
   },
   {
@@ -459,6 +459,19 @@
       }
     ],
     "name": "WithdrawTimeoutChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newCore",
+        "type": "address"
+      }
+    ],
+    "name": "coreChanged",
     "type": "event"
   },
   {
