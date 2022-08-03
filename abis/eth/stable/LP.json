@@ -11,6 +11,11 @@
   },
   {
     "inputs": [],
+    "name": "CoreNotActive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "DeadlineExpired",
     "type": "error"
   },
@@ -62,11 +67,6 @@
   {
     "inputs": [],
     "name": "NotEnoughLiquidity",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "OnlyCore",
     "type": "error"
   },
   {
@@ -211,26 +211,19 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "core",
         "type": "address"
-      }
-    ],
-    "name": "CoreDisabled",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
+      },
       {
         "indexed": false,
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
       }
     ],
-    "name": "CoreEnabled",
+    "name": "CoreUpdated",
     "type": "event"
   },
   {
@@ -438,6 +431,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      }
+    ],
+    "name": "NewCore",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "uint256",
         "name": "gameId",
@@ -463,13 +469,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newOracle",
-        "type": "address"
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newOracleFee",
+        "type": "uint64"
       }
     ],
-    "name": "OracleAdded",
+    "name": "OracleRewardChanged",
     "type": "event"
   },
   {
@@ -480,22 +486,15 @@
         "internalType": "address",
         "name": "oracle",
         "type": "address"
-      }
-    ],
-    "name": "OracleRenounced",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
+      },
       {
         "indexed": false,
-        "internalType": "uint64",
-        "name": "newOracleFee",
-        "type": "uint64"
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
       }
     ],
-    "name": "OracleRewardChanged",
+    "name": "OracleUpdated",
     "type": "event"
   },
   {
@@ -636,37 +635,6 @@
     "name": "addLiquidityNative",
     "outputs": [],
     "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "maintainer",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "addMaintainer",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
-      }
-    ],
-    "name": "addOracle",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1010,9 +978,9 @@
     "name": "cores",
     "outputs": [
       {
-        "internalType": "bool",
+        "internalType": "enum ILP.CoreState",
         "name": "",
-        "type": "bool"
+        "type": "uint8"
       }
     ],
     "stateMutability": "view",
@@ -1478,32 +1446,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "core",
-        "type": "address"
-      }
-    ],
-    "name": "removeCore",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
-      }
-    ],
-    "name": "renounceOracle",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
         "name": "from",
         "type": "address"
       },
@@ -1781,6 +1723,24 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "updateCore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "updateId",
     "outputs": [
@@ -1791,6 +1751,42 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "maintainer",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "updateMaintainer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "updateOracle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
