@@ -86,6 +86,11 @@
   },
   {
     "inputs": [],
+    "name": "PaymentLocked",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "UnknownCore",
     "type": "error"
   },
@@ -275,22 +280,35 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "account",
         "type": "address"
       },
       {
+        "indexed": true,
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
+      },
+      {
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint48",
-        "name": "leaf",
-        "type": "uint48"
       }
     ],
     "name": "LiquidityAdded",
@@ -304,6 +322,12 @@
         "internalType": "address",
         "name": "account",
         "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
       },
       {
         "indexed": false,
@@ -581,6 +605,19 @@
     "type": "event"
   },
   {
+    "inputs": [],
+    "name": "MULTIPLIER",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -836,6 +873,19 @@
       }
     ],
     "name": "changeDaoReward",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int128",
+        "name": "deltaReserve",
+        "type": "int128"
+      }
+    ],
+    "name": "changeLockedLiquidity",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1484,7 +1534,7 @@
       },
       {
         "internalType": "bytes",
-        "name": "_data",
+        "name": "data",
         "type": "bytes"
       }
     ],

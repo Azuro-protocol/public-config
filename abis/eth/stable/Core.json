@@ -16,6 +16,11 @@
   },
   {
     "inputs": [],
+    "name": "CantAcceptBet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "CantChangeFlag",
     "type": "error"
   },
@@ -51,7 +56,17 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectTimestamp",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "NoPendingReward",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotEnoughLiquidity",
     "type": "error"
   },
   {
@@ -121,6 +136,19 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "address",
+        "name": "newAffiliate",
+        "type": "address"
+      }
+    ],
+    "name": "AffiliateChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "internalType": "uint256",
         "name": "gameId",
         "type": "uint256"
@@ -182,6 +210,25 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newTimestamp",
+        "type": "uint64"
+      }
+    ],
+    "name": "ConditionShifted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "uint256",
         "name": "conditionId",
@@ -195,6 +242,19 @@
       }
     ],
     "name": "ConditionStopped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
     "type": "event"
   },
   {
@@ -230,19 +290,8 @@
     "type": "event"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "affiliatedProfit",
+    "inputs": [],
+    "name": "MULTIPLIER",
     "outputs": [
       {
         "internalType": "uint128",
@@ -285,6 +334,35 @@
       }
     ],
     "name": "calculateOdds",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "odds",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint8",
+        "name": "outcomeIndex",
+        "type": "uint8"
+      }
+    ],
+    "name": "calculateOddsIdx",
     "outputs": [
       {
         "internalType": "uint64",
@@ -378,7 +456,7 @@
         "type": "uint64"
       },
       {
-        "internalType": "enum ICore.ConditionState",
+        "internalType": "enum ICondition.ConditionState",
         "name": "state",
         "type": "uint8"
       },
@@ -386,54 +464,6 @@
         "internalType": "uint48",
         "name": "leaf",
         "type": "uint48"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "contributedConditionIds",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "contributions",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "totalNetBets",
-        "type": "uint128"
       }
     ],
     "stateMutability": "view",
@@ -530,7 +560,7 @@
             "type": "uint64"
           },
           {
-            "internalType": "enum ICore.ConditionState",
+            "internalType": "enum ICondition.ConditionState",
             "name": "state",
             "type": "uint8"
           },
@@ -540,7 +570,7 @@
             "type": "uint48"
           }
         ],
-        "internalType": "struct ICore.Condition",
+        "internalType": "struct ICondition.Condition",
         "name": "",
         "type": "tuple"
       }
@@ -625,7 +655,7 @@
             "type": "uint64"
           },
           {
-            "internalType": "enum ICore.ConditionState",
+            "internalType": "enum ICondition.ConditionState",
             "name": "state",
             "type": "uint8"
           },
@@ -635,7 +665,7 @@
             "type": "uint48"
           }
         ],
-        "internalType": "struct ICore.Condition",
+        "internalType": "struct ICondition.Condition",
         "name": "",
         "type": "tuple"
       },
@@ -743,7 +773,7 @@
       },
       {
         "internalType": "address",
-        "name": "affiliate",
+        "name": "affiliate_",
         "type": "address"
       },
       {
@@ -771,13 +801,8 @@
       },
       {
         "internalType": "uint128[2]",
-        "name": "fundBanks",
+        "name": "funds",
         "type": "uint128[2]"
-      },
-      {
-        "internalType": "int128",
-        "name": "deltaReserve",
-        "type": "int128"
       }
     ],
     "stateMutability": "nonpayable",
@@ -787,7 +812,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "affiliate",
+        "name": "affiliate_",
         "type": "address"
       },
       {
