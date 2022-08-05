@@ -1,0 +1,937 @@
+[
+  {
+    "inputs": [],
+    "name": "BetNotAllowed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BigDifference",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BigMargin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CantAcceptBet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CantChangeFlag",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionAlreadyCreated",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionAlreadyResolved",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionNotExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionNotFinished",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FlagAlreadySet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GameAlreadyStarted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectTimestamp",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoPendingReward",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotEnoughLiquidity",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyLp",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "waitTime",
+        "type": "uint64"
+      }
+    ],
+    "name": "ResolveTooEarly",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SameOutcomes",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SmallBet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SmallOdds",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "pendingRewardsCount",
+        "type": "uint256"
+      }
+    ],
+    "name": "StartOutOfRange",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongOutcome",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongToken",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroBalance",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroOdds",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAffiliate",
+        "type": "address"
+      }
+    ],
+    "name": "AffiliateChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "oracleConditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ConditionCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "oracleConditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "outcomeWin",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "state",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "int128",
+        "name": "lpProfit",
+        "type": "int128"
+      }
+    ],
+    "name": "ConditionResolved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newTimestamp",
+        "type": "uint64"
+      }
+    ],
+    "name": "ConditionShifted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "flag",
+        "type": "bool"
+      }
+    ],
+    "name": "ConditionStopped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newRatio",
+        "type": "uint64"
+      }
+    ],
+    "name": "MaxBanksRatioChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "MULTIPLIER",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "azuroBet",
+    "outputs": [
+      {
+        "internalType": "contract IAzuroBet",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "outcome",
+        "type": "uint64"
+      }
+    ],
+    "name": "calculateOdds",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "odds",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint8",
+        "name": "outcomeIndex",
+        "type": "uint8"
+      }
+    ],
+    "name": "calculateOddsIdx",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "odds",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelByMaintainer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "oracleConditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelByOracle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "newRatio",
+        "type": "uint64"
+      }
+    ],
+    "name": "changeMaxBanksRatio",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "checkOwner",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "conditions",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "outcomeWin",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "margin",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "end",
+        "type": "uint64"
+      },
+      {
+        "internalType": "enum ICondition.ConditionState",
+        "name": "state",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "oracleCondId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64[2]",
+        "name": "odds",
+        "type": "uint64[2]"
+      },
+      {
+        "internalType": "uint64[2]",
+        "name": "outcomes",
+        "type": "uint64[2]"
+      },
+      {
+        "internalType": "uint128",
+        "name": "reinforcement",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "margin",
+        "type": "uint64"
+      }
+    ],
+    "name": "createCondition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getCondition",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint128[2]",
+            "name": "payouts",
+            "type": "uint128[2]"
+          },
+          {
+            "internalType": "uint128[2]",
+            "name": "totalNetBets",
+            "type": "uint128[2]"
+          },
+          {
+            "internalType": "uint128[2]",
+            "name": "reinforcements",
+            "type": "uint128[2]"
+          },
+          {
+            "internalType": "uint64[2]",
+            "name": "outcomes",
+            "type": "uint64[2]"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeWin",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "margin",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "end",
+            "type": "uint64"
+          },
+          {
+            "internalType": "enum ICondition.ConditionState",
+            "name": "state",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint48",
+            "name": "leaf",
+            "type": "uint48"
+          }
+        ],
+        "internalType": "struct ICondition.Condition",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "outcomeIndex",
+        "type": "uint8"
+      }
+    ],
+    "name": "getTokenId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getTokenInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint128[2]",
+            "name": "payouts",
+            "type": "uint128[2]"
+          },
+          {
+            "internalType": "uint128[2]",
+            "name": "totalNetBets",
+            "type": "uint128[2]"
+          },
+          {
+            "internalType": "uint128[2]",
+            "name": "reinforcements",
+            "type": "uint128[2]"
+          },
+          {
+            "internalType": "uint64[2]",
+            "name": "outcomes",
+            "type": "uint64[2]"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeWin",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "margin",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "end",
+            "type": "uint64"
+          },
+          {
+            "internalType": "enum ICondition.ConditionState",
+            "name": "state",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint48",
+            "name": "leaf",
+            "type": "uint48"
+          }
+        ],
+        "internalType": "struct ICondition.Condition",
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "azuroBet_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "lp_",
+        "type": "address"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lp",
+    "outputs": [
+      {
+        "internalType": "contract ILP",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "maxBanksRatio",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "oracleCondIds",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "outcome",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "minOdds",
+        "type": "uint64"
+      },
+      {
+        "internalType": "address",
+        "name": "affiliate_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
+    "name": "putBet",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "odds",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint128[2]",
+        "name": "funds",
+        "type": "uint128[2]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "affiliate_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "resolveAffiliateReward",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "oracleCondId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "outcomeWin",
+        "type": "uint64"
+      }
+    ],
+    "name": "resolveCondition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "resolvePayout",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "flag",
+        "type": "bool"
+      }
+    ],
+    "name": "stopCondition",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "viewPayout",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
