@@ -36,6 +36,11 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectFee",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectPercent",
     "type": "error"
   },
@@ -605,19 +610,6 @@
     "type": "event"
   },
   {
-    "inputs": [],
-    "name": "MULTIPLIER",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -919,9 +911,9 @@
   {
     "inputs": [
       {
-        "internalType": "uint128",
+        "internalType": "uint64",
         "name": "newReinforcementAbility",
-        "type": "uint128"
+        "type": "uint64"
       }
     ],
     "name": "changeReinforcementAbility",
@@ -1484,9 +1476,9 @@
     "name": "reinforcementAbility",
     "outputs": [
       {
-        "internalType": "uint128",
+        "internalType": "uint64",
         "name": "",
-        "type": "uint128"
+        "type": "uint64"
       }
     ],
     "stateMutability": "view",

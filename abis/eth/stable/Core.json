@@ -11,11 +11,6 @@
   },
   {
     "inputs": [],
-    "name": "BigMargin",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "CantAcceptBet",
     "type": "error"
   },
@@ -52,6 +47,11 @@
   {
     "inputs": [],
     "name": "GameAlreadyStarted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectMargin",
     "type": "error"
   },
   {
@@ -291,19 +291,6 @@
   },
   {
     "inputs": [],
-    "name": "MULTIPLIER",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "azuroBet",
     "outputs": [
       {
@@ -334,35 +321,6 @@
       }
     ],
     "name": "calculateOdds",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "odds",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint8",
-        "name": "outcomeIndex",
-        "type": "uint8"
-      }
-    ],
-    "name": "calculateOddsIdx",
     "outputs": [
       {
         "internalType": "uint64",
