@@ -183,9 +183,9 @@
     "name": "balanceCostOf",
     "outputs": [
       {
-        "internalType": "uint128",
+        "internalType": "uint256",
         "name": "",
-        "type": "uint128"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -338,9 +338,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "uint128",
+        "internalType": "uint256",
         "name": "cost",
-        "type": "uint128"
+        "type": "uint256"
       }
     ],
     "name": "mint",
