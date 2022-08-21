@@ -706,9 +706,36 @@
         "type": "uint64"
       },
       {
-        "internalType": "bytes",
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "isLiveBetting",
+            "type": "bool"
+          },
+          {
+            "internalType": "address",
+            "name": "affiliate",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minOdds",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICore.BetData",
         "name": "data",
-        "type": "bytes"
+        "type": "tuple"
       }
     ],
     "name": "bet",
@@ -739,9 +766,36 @@
         "type": "uint64"
       },
       {
-        "internalType": "bytes",
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "isLiveBetting",
+            "type": "bool"
+          },
+          {
+            "internalType": "address",
+            "name": "affiliate",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minOdds",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICore.BetData",
         "name": "data",
-        "type": "bytes"
+        "type": "tuple"
       }
     ],
     "name": "betFor",
@@ -762,9 +816,36 @@
         "type": "uint64"
       },
       {
-        "internalType": "bytes",
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "isLiveBetting",
+            "type": "bool"
+          },
+          {
+            "internalType": "address",
+            "name": "affiliate",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minOdds",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICore.BetData",
         "name": "data",
-        "type": "bytes"
+        "type": "tuple"
       }
     ],
     "name": "betNative",
@@ -1819,6 +1900,25 @@
     "inputs": [
       {
         "internalType": "uint48",
+        "name": "",
+        "type": "uint48"
+      }
+    ],
+    "name": "withdrawAfter",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
         "name": "depNum",
         "type": "uint48"
       },
@@ -1890,25 +1990,6 @@
   {
     "inputs": [],
     "name": "withdrawTimeout",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint48",
-        "name": "",
-        "type": "uint48"
-      }
-    ],
-    "name": "withdrawals",
     "outputs": [
       {
         "internalType": "uint64",
