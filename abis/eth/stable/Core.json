@@ -11,11 +11,6 @@
   },
   {
     "inputs": [],
-    "name": "CantAcceptBet",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "CantChangeFlag",
     "type": "error"
   },
@@ -37,11 +32,6 @@
   {
     "inputs": [],
     "name": "ConditionNotFinished",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "FlagAlreadySet",
     "type": "error"
   },
   {
@@ -131,19 +121,6 @@
     "inputs": [
       {
         "indexed": true,
-        "internalType": "address",
-        "name": "newAffiliate",
-        "type": "address"
-      }
-    ],
-    "name": "AffiliateChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
         "internalType": "uint256",
         "name": "gameId",
         "type": "uint256"
@@ -170,20 +147,8 @@
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "oracleConditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
         "name": "conditionId",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "outcomeWin",
-        "type": "uint64"
       },
       {
         "indexed": false,
@@ -193,31 +158,18 @@
       },
       {
         "indexed": false,
+        "internalType": "uint64",
+        "name": "outcomeWin",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
         "internalType": "int128",
         "name": "lpProfit",
         "type": "int128"
       }
     ],
     "name": "ConditionResolved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "newTimestamp",
-        "type": "uint64"
-      }
-    ],
-    "name": "ConditionShifted",
     "type": "event"
   },
   {
@@ -442,30 +394,6 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "bettor",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "betId",
-        "type": "uint256"
-      }
-    ],
-    "name": "claimBetToken",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "rejectedAmount",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
@@ -490,12 +418,12 @@
       },
       {
         "internalType": "uint64",
-        "name": "liveBegin",
+        "name": "bettingStart",
         "type": "uint64"
       },
       {
         "internalType": "uint64",
-        "name": "liveEnd",
+        "name": "bettingEnd",
         "type": "uint64"
       },
       {
@@ -521,7 +449,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "oracleCondId",
+        "name": "oracleConditionId",
         "type": "uint256"
       },
       {
@@ -599,12 +527,12 @@
           },
           {
             "internalType": "uint64",
-            "name": "liveBegin",
+            "name": "bettingStart",
             "type": "uint64"
           },
           {
             "internalType": "uint64",
-            "name": "liveEnd",
+            "name": "bettingEnd",
             "type": "uint64"
           },
           {
@@ -699,12 +627,12 @@
           },
           {
             "internalType": "uint64",
-            "name": "liveBegin",
+            "name": "bettingStart",
             "type": "uint64"
           },
           {
             "internalType": "uint64",
-            "name": "liveEnd",
+            "name": "bettingEnd",
             "type": "uint64"
           },
           {
@@ -788,7 +716,7 @@
         "type": "uint256"
       }
     ],
-    "name": "oracleCondIds",
+    "name": "oracleConditionIds",
     "outputs": [
       {
         "internalType": "uint256",
@@ -827,11 +755,6 @@
       {
         "components": [
           {
-            "internalType": "bool",
-            "name": "isLiveBetting",
-            "type": "bool"
-          },
-          {
             "internalType": "address",
             "name": "affiliate",
             "type": "address"
@@ -852,7 +775,7 @@
             "type": "uint64"
           }
         ],
-        "internalType": "struct ICore.BetData",
+        "internalType": "struct ICoreBase.BetData",
         "name": "data",
         "type": "tuple"
       }
@@ -895,7 +818,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "oracleCondId",
+        "name": "oracleConditionId",
         "type": "uint256"
       },
       {

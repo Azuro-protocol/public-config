@@ -91,11 +91,6 @@
   },
   {
     "inputs": [],
-    "name": "PaymentLocked",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "UnknownCore",
     "type": "error"
   },
@@ -253,7 +248,7 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
         "name": "gameId",
         "type": "uint256"
@@ -266,7 +261,7 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
         "name": "gameId",
         "type": "uint256"
@@ -342,25 +337,6 @@
       }
     ],
     "name": "LiquidityRemoved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "requestWallet",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "requestedValueLp",
-        "type": "uint256"
-      }
-    ],
-    "name": "LiquidityRequested",
     "type": "event"
   },
   {
@@ -482,19 +458,6 @@
       }
     ],
     "name": "OwnershipTransferred",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "newPeriod",
-        "type": "uint64"
-      }
-    ],
-    "name": "PeriodChanged",
     "type": "event"
   },
   {
@@ -708,11 +671,6 @@
       {
         "components": [
           {
-            "internalType": "bool",
-            "name": "isLiveBetting",
-            "type": "bool"
-          },
-          {
             "internalType": "address",
             "name": "affiliate",
             "type": "address"
@@ -733,7 +691,7 @@
             "type": "uint64"
           }
         ],
-        "internalType": "struct ICore.BetData",
+        "internalType": "struct ICoreBase.BetData",
         "name": "data",
         "type": "tuple"
       }
@@ -768,11 +726,6 @@
       {
         "components": [
           {
-            "internalType": "bool",
-            "name": "isLiveBetting",
-            "type": "bool"
-          },
-          {
             "internalType": "address",
             "name": "affiliate",
             "type": "address"
@@ -793,7 +746,7 @@
             "type": "uint64"
           }
         ],
-        "internalType": "struct ICore.BetData",
+        "internalType": "struct ICoreBase.BetData",
         "name": "data",
         "type": "tuple"
       }
@@ -818,11 +771,6 @@
       {
         "components": [
           {
-            "internalType": "bool",
-            "name": "isLiveBetting",
-            "type": "bool"
-          },
-          {
             "internalType": "address",
             "name": "affiliate",
             "type": "address"
@@ -843,7 +791,7 @@
             "type": "uint64"
           }
         ],
-        "internalType": "struct ICore.BetData",
+        "internalType": "struct ICoreBase.BetData",
         "name": "data",
         "type": "tuple"
       }
