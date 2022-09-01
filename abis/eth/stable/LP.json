@@ -10,6 +10,17 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "waitTime",
+        "type": "uint64"
+      }
+    ],
+    "name": "ClaimTimeout",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "CoreNotActive",
     "type": "error"
@@ -67,6 +78,11 @@
   {
     "inputs": [],
     "name": "NoLiquidity",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoReward",
     "type": "error"
   },
   {
@@ -210,6 +226,19 @@
       }
     ],
     "name": "BettorWin",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newClaimTimeout",
+        "type": "uint64"
+      }
+    ],
+    "name": "ClaimTimeoutChanged",
     "type": "event"
   },
   {
@@ -831,6 +860,19 @@
     "inputs": [
       {
         "internalType": "uint64",
+        "name": "newClaimTimeout",
+        "type": "uint64"
+      }
+    ],
+    "name": "changeClaimTimeout",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
         "name": "newDaoFee",
         "type": "uint64"
       }
@@ -996,6 +1038,26 @@
     "name": "claimBetToken",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "claimReward",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "claimTimeout",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1477,6 +1539,30 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "rewards",
+    "outputs": [
+      {
+        "internalType": "int128",
+        "name": "amount",
+        "type": "int128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "lastClaim",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "from",
         "type": "address"
       },
@@ -1662,19 +1748,6 @@
         "internalType": "string",
         "name": "",
         "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "totalDaoRewards",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
       }
     ],
     "stateMutability": "view",
