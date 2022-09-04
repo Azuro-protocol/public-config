@@ -56,6 +56,11 @@
   },
   {
     "inputs": [],
+    "name": "OnlyBetOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyLp",
     "type": "error"
   },
@@ -849,7 +854,7 @@
     "outputs": [
       {
         "internalType": "uint128",
-        "name": "amount",
+        "name": "payout",
         "type": "uint128"
       }
     ],
@@ -902,6 +907,11 @@
     ],
     "name": "viewPayout",
     "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      },
       {
         "internalType": "uint128",
         "name": "",

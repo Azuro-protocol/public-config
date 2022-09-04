@@ -1023,24 +1023,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "betId",
-        "type": "uint256"
-      }
-    ],
-    "name": "claimBetToken",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "claimReward",
     "outputs": [],
@@ -1910,7 +1892,7 @@
     "outputs": [
       {
         "internalType": "uint128",
-        "name": "",
+        "name": "payout",
         "type": "uint128"
       }
     ],

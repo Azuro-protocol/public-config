@@ -215,7 +215,7 @@
         "type": "uint256"
       }
     ],
-    "name": "balancePriceOf",
+    "name": "balancePayoutOf",
     "outputs": [
       {
         "internalType": "uint256",
@@ -239,7 +239,25 @@
         "type": "uint256"
       }
     ],
-    "name": "burnAll",
+    "name": "burnBalance",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "burnPayout",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -326,7 +344,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "price",
+        "name": "payout",
         "type": "uint256"
       }
     ],
