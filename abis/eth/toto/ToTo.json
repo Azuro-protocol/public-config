@@ -99,17 +99,12 @@
   },
   {
     "inputs": [],
-    "name": "NoDAOReward",
+    "name": "NoDaoReward",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "OnlyOracle",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "SameOutcomes",
     "type": "error"
   },
   {
@@ -408,19 +403,6 @@
     "type": "event"
   },
   {
-    "inputs": [],
-    "name": "DAOReward",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -476,9 +458,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "uint64",
+        "internalType": "uint8",
         "name": "outcome",
-        "type": "uint64"
+        "type": "uint8"
       },
       {
         "internalType": "uint128",
@@ -499,9 +481,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "uint64",
+        "internalType": "uint8",
         "name": "outcome",
-        "type": "uint64"
+        "type": "uint8"
       }
     ],
     "name": "betNative",
@@ -524,7 +506,7 @@
   },
   {
     "inputs": [],
-    "name": "claimDAOReward",
+    "name": "claimDaoReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -551,13 +533,13 @@
       },
       {
         "internalType": "uint64",
-        "name": "outcomeWin",
+        "name": "startsAt",
         "type": "uint64"
       },
       {
-        "internalType": "uint64",
-        "name": "startsAt",
-        "type": "uint64"
+        "internalType": "uint8",
+        "name": "outcomeWin",
+        "type": "uint8"
       },
       {
         "internalType": "enum IPoolBetting.ConditionState",
@@ -570,11 +552,6 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "uint64[2]",
-        "name": "outcomes",
-        "type": "uint64[2]"
-      },
       {
         "internalType": "uint64",
         "name": "startsAt",
@@ -594,6 +571,19 @@
   {
     "inputs": [],
     "name": "daoFee",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "daoReward",
     "outputs": [
       {
         "internalType": "uint128",
@@ -645,19 +635,14 @@
             "type": "uint128[2]"
           },
           {
-            "internalType": "uint64[2]",
-            "name": "outcomes",
-            "type": "uint64[2]"
-          },
-          {
-            "internalType": "uint64",
-            "name": "outcomeWin",
-            "type": "uint64"
-          },
-          {
             "internalType": "uint64",
             "name": "startsAt",
             "type": "uint64"
+          },
+          {
+            "internalType": "uint8",
+            "name": "outcomeWin",
+            "type": "uint8"
           },
           {
             "internalType": "enum IPoolBetting.ConditionState",
@@ -681,9 +666,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "uint64",
+        "internalType": "uint8",
         "name": "outcome",
-        "type": "uint64"
+        "type": "uint8"
       }
     ],
     "name": "getTokenId",
@@ -694,7 +679,7 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -780,9 +765,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "uint64",
+        "internalType": "uint8",
         "name": "outcomeWin",
-        "type": "uint64"
+        "type": "uint8"
       }
     ],
     "name": "resolveCondition",
