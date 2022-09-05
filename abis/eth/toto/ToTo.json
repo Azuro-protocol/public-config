@@ -185,7 +185,7 @@
         "type": "uint128"
       }
     ],
-    "name": "BettorWon",
+    "name": "BettorWin",
     "type": "event"
   },
   {
@@ -219,7 +219,7 @@
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "timestamp",
+        "name": "startsAt",
         "type": "uint64"
       }
     ],
@@ -551,12 +551,12 @@
       },
       {
         "internalType": "uint64",
-        "name": "outcomeWon",
+        "name": "outcomeWin",
         "type": "uint64"
       },
       {
         "internalType": "uint64",
-        "name": "timestamp",
+        "name": "startsAt",
         "type": "uint64"
       },
       {
@@ -577,7 +577,7 @@
       },
       {
         "internalType": "uint64",
-        "name": "timestamp",
+        "name": "startsAt",
         "type": "uint64"
       },
       {
@@ -651,12 +651,12 @@
           },
           {
             "internalType": "uint64",
-            "name": "outcomeWon",
+            "name": "outcomeWin",
             "type": "uint64"
           },
           {
             "internalType": "uint64",
-            "name": "timestamp",
+            "name": "startsAt",
             "type": "uint64"
           },
           {
@@ -781,7 +781,7 @@
       },
       {
         "internalType": "uint64",
-        "name": "outcomeWon",
+        "name": "outcomeWin",
         "type": "uint64"
       }
     ],
