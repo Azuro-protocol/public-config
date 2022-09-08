@@ -5,6 +5,22 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "BettingEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
+      }
+    ],
+    "name": "BettingNotStarted",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -95,6 +111,11 @@
       }
     ],
     "name": "ConditionStillOn",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectBettingPeriod",
     "type": "error"
   },
   {
@@ -214,7 +235,13 @@
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "startsAt",
+        "name": "bettingStartsAt",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "bettingEndsAt",
         "type": "uint64"
       }
     ],
@@ -533,7 +560,12 @@
       },
       {
         "internalType": "uint64",
-        "name": "startsAt",
+        "name": "bettingStartsAt",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "bettingEndsAt",
         "type": "uint64"
       },
       {
@@ -553,14 +585,19 @@
   {
     "inputs": [
       {
-        "internalType": "uint64",
-        "name": "startsAt",
-        "type": "uint64"
-      },
-      {
         "internalType": "bytes32",
         "name": "ipfsHash",
         "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "bettingStartsAt",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "bettingEndsAt",
+        "type": "uint64"
       }
     ],
     "name": "createCondition",
@@ -636,7 +673,12 @@
           },
           {
             "internalType": "uint64",
-            "name": "startsAt",
+            "name": "bettingStartsAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "bettingEndsAt",
             "type": "uint64"
           },
           {
