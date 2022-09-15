@@ -77,6 +77,11 @@
   },
   {
     "inputs": [],
+    "name": "MinDepoNotSufficient",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "NoLiquidity",
     "type": "error"
   },
