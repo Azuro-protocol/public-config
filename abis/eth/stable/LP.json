@@ -587,6 +587,11 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
         "internalType": "uint128",
         "name": "lockedReserve",
         "type": "uint128"
@@ -872,6 +877,11 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
         "internalType": "int128",
         "name": "deltaReserve",
         "type": "int128"
@@ -1106,6 +1116,11 @@
         "internalType": "bytes32",
         "name": "ipfsHash",
         "type": "bytes32"
+      },
+      {
+        "internalType": "uint128",
+        "name": "lockedLiquidity",
+        "type": "uint128"
       },
       {
         "internalType": "uint64",
