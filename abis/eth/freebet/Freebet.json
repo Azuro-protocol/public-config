@@ -1,6 +1,11 @@
 [
   {
     "type": "error",
+    "name": "AlreadyResolved",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "BetExpired",
     "inputs": []
   },
@@ -99,6 +104,31 @@
         "type": "bool",
         "name": "approved",
         "internalType": "bool",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BettorWon",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "bettor",
+        "internalType": "address",
+        "indexed": false
+      },
+      {
+        "type": "uint256",
+        "name": "azuroBetId",
+        "internalType": "uint256",
+        "indexed": false
+      },
+      {
+        "type": "uint128",
+        "name": "amount",
+        "internalType": "uint128",
         "indexed": false
       }
     ],
@@ -206,7 +236,7 @@
       },
       {
         "type": "uint256",
-        "name": "azurobetId",
+        "name": "azuroBetId",
         "internalType": "uint256",
         "indexed": true
       },
@@ -221,7 +251,7 @@
   },
   {
     "type": "event",
-    "name": "FreeBetReissue",
+    "name": "FreeBetReissued",
     "inputs": [
       {
         "type": "address",
@@ -361,6 +391,26 @@
       }
     ],
     "name": "LP",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "addReserve",
+    "inputs": [
+      {
+        "type": "uint128",
+        "name": "amount",
+        "internalType": "uint128"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "payable",
+    "outputs": [],
+    "name": "addReserveNative",
     "inputs": []
   },
   {
@@ -1047,7 +1097,33 @@
     "type": "function",
     "stateMutability": "nonpayable",
     "outputs": [],
+    "name": "withdrawPayoutNative",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "azuroBetId",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
     "name": "withdrawReserve",
+    "inputs": [
+      {
+        "type": "uint128",
+        "name": "amount",
+        "internalType": "uint128"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "withdrawReserveNative",
     "inputs": [
       {
         "type": "uint128",
