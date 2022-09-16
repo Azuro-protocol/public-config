@@ -417,11 +417,6 @@
       },
       {
         "internalType": "uint64",
-        "name": "startsAt",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
         "name": "endsAt",
         "type": "uint64"
       },
@@ -526,11 +521,6 @@
           },
           {
             "internalType": "uint64",
-            "name": "startsAt",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint64",
             "name": "endsAt",
             "type": "uint64"
           },
@@ -622,11 +612,6 @@
           {
             "internalType": "uint64",
             "name": "margin",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint64",
-            "name": "startsAt",
             "type": "uint64"
           },
           {
