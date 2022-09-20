@@ -111,7 +111,7 @@
   },
   {
     "type": "event",
-    "name": "BettorWon",
+    "name": "BettorWin",
     "inputs": [
       {
         "type": "address",
@@ -1131,5 +1131,9 @@
         "internalType": "uint128"
       }
     ]
+  },
+  {
+    "type": "receive",
+    "stateMutability": "payable"
   }
 ]
