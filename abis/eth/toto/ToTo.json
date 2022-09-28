@@ -5,7 +5,13 @@
     "type": "error"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "endsAt",
+        "type": "uint64"
+      }
+    ],
     "name": "BettingEnded",
     "type": "error"
   },
@@ -21,95 +27,59 @@
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "ConditionAlreadyCanceled",
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "ConditionAlreadyResolved",
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "ConditionCanceled_",
     "type": "error"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "expiredAt",
+        "type": "uint64"
+      }
+    ],
     "name": "ConditionExpired",
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "ConditionNotExists",
     "type": "error"
   },
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
       }
     ],
     "name": "ConditionNotStarted",
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "ConditionResolved_",
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "ConditionStarted",
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "ConditionStillOn",
     "type": "error"
   },
@@ -265,6 +235,25 @@
       }
     ],
     "name": "ConditionResolved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "bettingEndsAt",
+        "type": "uint64"
+      }
+    ],
+    "name": "ConditionShifted",
     "type": "event"
   },
   {
@@ -897,6 +886,24 @@
       }
     ],
     "name": "setApprovalForAll",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "bettingEndsAt",
+        "type": "uint64"
+      }
+    ],
+    "name": "shiftCondition",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
