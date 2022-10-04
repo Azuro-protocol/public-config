@@ -1,17 +1,17 @@
 [
   {
     "inputs": [],
-    "name": "ActiveConditions",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "AmountMustNotBeZero",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "AmountNotSufficient",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BetExpired",
     "type": "error"
   },
   {
@@ -27,12 +27,37 @@
   },
   {
     "inputs": [],
-    "name": "ConditionStarted",
+    "name": "CoreNotActive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GameAlreadyCanceled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GameCanceled_",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GameNotExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectFee",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "IncorrectPercent",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectTimestamp",
     "type": "error"
   },
   {
@@ -52,7 +77,7 @@
   },
   {
     "inputs": [],
-    "name": "NoDaoReward",
+    "name": "MinDepoNotSufficient",
     "type": "error"
   },
   {
@@ -62,27 +87,32 @@
   },
   {
     "inputs": [],
-    "name": "NoOracleReward",
+    "name": "NoReward",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "NoWinNoPrize",
+    "name": "NotEnoughLiquidity",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "NotEnoughReserves",
+    "name": "OnlyFactory",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "OnlyBetOwner",
+    "name": "OnlyMaintainer",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "OnlyCore",
+    "name": "OnlyOracle",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UnknownCore",
     "type": "error"
   },
   {
@@ -97,9 +127,36 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "WrongToken",
-    "type": "error"
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newAffiliateFee",
+        "type": "uint64"
+      }
+    ],
+    "name": "AffiliateRewardChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "affiliate",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "AffiliateRewarded",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -155,22 +212,9 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "newAzuroBet",
-        "type": "address"
-      }
-    ],
-    "name": "AzuroBetChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "address",
-        "name": "better",
+        "name": "bettor",
         "type": "address"
       },
       {
@@ -186,7 +230,7 @@
         "type": "uint256"
       }
     ],
-    "name": "BetterWin",
+    "name": "BettorWin",
     "type": "event"
   },
   {
@@ -206,13 +250,64 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
         "indexed": false,
-        "internalType": "uint128",
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "CoreUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
         "name": "newDaoFee",
-        "type": "uint128"
+        "type": "uint64"
       }
     ],
     "name": "DaoRewardChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "GameCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newStart",
+        "type": "uint64"
+      }
+    ],
+    "name": "GameShifted",
     "type": "event"
   },
   {
@@ -238,16 +333,16 @@
         "type": "address"
       },
       {
+        "indexed": true,
+        "internalType": "uint48",
+        "name": "leaf",
+        "type": "uint48"
+      },
+      {
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint48",
-        "name": "leaf",
-        "type": "uint48"
       }
     ],
     "name": "LiquidityAdded",
@@ -284,17 +379,17 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "requestWallet",
+        "name": "maintainer",
         "type": "address"
       },
       {
         "indexed": false,
-        "internalType": "uint256",
-        "name": "requestedValueLp",
-        "type": "uint256"
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
       }
     ],
-    "name": "LiquidityRequested",
+    "name": "MaintainerUpdated",
     "type": "event"
   },
   {
@@ -315,54 +410,24 @@
     "inputs": [
       {
         "indexed": true,
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
         "internalType": "uint256",
-        "name": "betId",
+        "name": "gameId",
         "type": "uint256"
       },
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "ipfsHash",
+        "type": "bytes32"
       },
       {
         "indexed": false,
         "internalType": "uint64",
-        "name": "outcomeId",
+        "name": "startsAt",
         "type": "uint64"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "odds",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "fund1",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "fund2",
-        "type": "uint128"
       }
     ],
-    "name": "NewBet",
+    "name": "NewGame",
     "type": "event"
   },
   {
@@ -370,12 +435,31 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "uint128",
+        "internalType": "uint64",
         "name": "newOracleFee",
-        "type": "uint128"
+        "type": "uint64"
       }
     ],
     "name": "OracleRewardChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "OracleUpdated",
     "type": "event"
   },
   {
@@ -395,19 +479,6 @@
       }
     ],
     "name": "OwnershipTransferred",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "newPeriod",
-        "type": "uint64"
-      }
-    ],
-    "name": "PeriodChanged",
     "type": "event"
   },
   {
@@ -462,17 +533,41 @@
     "type": "event"
   },
   {
-    "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "addCondition",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
-        "name": "newCore",
+        "name": "core",
         "type": "address"
       }
     ],
-    "name": "coreChanged",
-    "type": "event"
+    "name": "addCore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [
@@ -497,8 +592,13 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
         "internalType": "uint128",
-        "name": "initReserve",
+        "name": "lockedReserve",
         "type": "uint128"
       },
       {
@@ -510,11 +610,34 @@
         "internalType": "uint48",
         "name": "leaf",
         "type": "uint48"
+      },
+      {
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "affiliated",
+        "type": "bool"
       }
     ],
     "name": "addReserve",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "affiliateFee",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -533,19 +656,6 @@
     "name": "approve",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "azuroBet",
-    "outputs": [
-      {
-        "internalType": "contract IAzuroBet",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -570,9 +680,9 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
       },
       {
         "internalType": "uint128",
@@ -581,28 +691,39 @@
       },
       {
         "internalType": "uint64",
-        "name": "outcomeId",
+        "name": "expiresAt",
         "type": "uint64"
       },
       {
-        "internalType": "uint64",
-        "name": "deadline",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "minOdds",
-        "type": "uint64"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "affiliate",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minOdds",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICoreBase.BetData",
+        "name": "data",
+        "type": "tuple"
       }
     ],
     "name": "bet",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -614,9 +735,9 @@
         "type": "address"
       },
       {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
       },
       {
         "internalType": "uint128",
@@ -625,74 +746,109 @@
       },
       {
         "internalType": "uint64",
-        "name": "outcomeId",
+        "name": "expiresAt",
         "type": "uint64"
       },
       {
-        "internalType": "uint64",
-        "name": "deadline",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "minOdds",
-        "type": "uint64"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "affiliate",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minOdds",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICoreBase.BetData",
+        "name": "data",
+        "type": "tuple"
       }
     ],
     "name": "betFor",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
       },
       {
         "internalType": "uint64",
-        "name": "outcomeId",
+        "name": "expiresAt",
         "type": "uint64"
       },
       {
-        "internalType": "uint64",
-        "name": "deadline",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "minOdds",
-        "type": "uint64"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "affiliate",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minOdds",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct ICoreBase.BetData",
+        "name": "data",
+        "type": "tuple"
       }
     ],
     "name": "betNative",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "payable",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "newAzuroBet",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
       }
     ],
-    "name": "changeAzuroBet",
+    "name": "cancelGame",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "newAffiliateFee",
+        "type": "uint64"
+      }
+    ],
+    "name": "changeAffiliateReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -713,12 +869,12 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "newCore",
-        "type": "address"
+        "internalType": "uint64",
+        "name": "newDaoFee",
+        "type": "uint64"
       }
     ],
-    "name": "changeCore",
+    "name": "changeDaoReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -726,12 +882,17 @@
   {
     "inputs": [
       {
-        "internalType": "uint128",
-        "name": "newDaoFee",
-        "type": "uint128"
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int128",
+        "name": "deltaReserve",
+        "type": "int128"
       }
     ],
-    "name": "changeDaoReward",
+    "name": "changeLockedLiquidity",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -752,9 +913,9 @@
   {
     "inputs": [
       {
-        "internalType": "uint128",
+        "internalType": "uint64",
         "name": "newOracleFee",
-        "type": "uint128"
+        "type": "uint64"
       }
     ],
     "name": "changeOracleReward",
@@ -765,9 +926,9 @@
   {
     "inputs": [
       {
-        "internalType": "uint128",
+        "internalType": "uint64",
         "name": "newReinforcementAbility",
-        "type": "uint128"
+        "type": "uint64"
       }
     ],
     "name": "changeReinforcementAbility",
@@ -789,10 +950,16 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "claimDaoReward",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "maintainer",
+        "type": "address"
+      }
+    ],
+    "name": "checkMaintainer",
     "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -803,7 +970,63 @@
         "type": "address"
       }
     ],
-    "name": "claimOracleReward",
+    "name": "checkOracle",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "checkOwner",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "claimAffiliateReward",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      }
+    ],
+    "name": "claimAffiliateReward",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "claimReward",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -822,11 +1045,61 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "core",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "cores",
     "outputs": [
       {
-        "internalType": "contract ICore",
+        "internalType": "enum ILP.CoreState",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "ipfsHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
+      }
+    ],
+    "name": "createGame",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "daoFee",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "factory",
+    "outputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       }
@@ -835,13 +1108,34 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "daoFee",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "games",
     "outputs": [
       {
+        "internalType": "bytes32",
+        "name": "ipfsHash",
+        "type": "bytes32"
+      },
+      {
         "internalType": "uint128",
-        "name": "",
+        "name": "lockedLiquidity",
         "type": "uint128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bool",
+        "name": "canceled",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -861,6 +1155,30 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getGameInfo",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -888,7 +1206,7 @@
       },
       {
         "internalType": "uint48",
-        "name": "begin",
+        "name": "start",
         "type": "uint48"
       },
       {
@@ -938,25 +1256,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint128",
-        "name": "reinforcementAmount",
-        "type": "uint128"
-      }
-    ],
-    "name": "getPossibilityOfReinforcement",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "status",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "getReserve",
     "outputs": [
@@ -977,8 +1276,23 @@
         "type": "address"
       },
       {
+        "internalType": "uint64",
+        "name": "daoFee_",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "oracleFee_",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "affiliateFee_",
+        "type": "uint64"
+      },
+      {
         "internalType": "address",
-        "name": "azuroBetAddress",
+        "name": "oracle",
         "type": "address"
       }
     ],
@@ -1012,42 +1326,35 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "lastClaimDao",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lastClaimOracle",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
       }
     ],
-    "name": "lockReserve",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "name": "isGameCanceled",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastGameId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1064,13 +1371,19 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "minDepo",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "maintainers",
     "outputs": [
       {
-        "internalType": "uint128",
+        "internalType": "bool",
         "name": "",
-        "type": "uint128"
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -1078,12 +1391,12 @@
   },
   {
     "inputs": [],
-    "name": "multiplier",
+    "name": "minDepo",
     "outputs": [
       {
-        "internalType": "uint64",
+        "internalType": "uint128",
         "name": "",
-        "type": "uint64"
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",
@@ -1139,9 +1452,28 @@
     "name": "oracleFee",
     "outputs": [
       {
-        "internalType": "uint128",
+        "internalType": "uint64",
         "name": "",
-        "type": "uint128"
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "oracles",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -1181,48 +1513,39 @@
   },
   {
     "inputs": [],
-    "name": "realDaoRewards",
-    "outputs": [
-      {
-        "internalType": "int128",
-        "name": "",
-        "type": "int128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "realOracleRewards",
-    "outputs": [
-      {
-        "internalType": "int128",
-        "name": "",
-        "type": "int128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "reinforcementAbility",
     "outputs": [
       {
-        "internalType": "uint128",
+        "internalType": "uint64",
         "name": "",
-        "type": "uint128"
+        "type": "uint64"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "rewards",
+    "outputs": [
+      {
+        "internalType": "int128",
+        "name": "amount",
+        "type": "int128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "claimedAt",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1267,7 +1590,7 @@
       },
       {
         "internalType": "bytes",
-        "name": "_data",
+        "name": "data",
         "type": "bytes"
       }
     ],
@@ -1290,6 +1613,24 @@
       }
     ],
     "name": "setApprovalForAll",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
+      }
+    ],
+    "name": "shiftGame",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1403,19 +1744,6 @@
   },
   {
     "inputs": [],
-    "name": "totalDaoRewards",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "totalSupply",
     "outputs": [
       {
@@ -1488,6 +1816,24 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "updateCore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "updateId",
     "outputs": [
@@ -1503,6 +1849,47 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "maintainer",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "updateMaintainer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "updateOracle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -1511,14 +1898,28 @@
     "name": "viewPayout",
     "outputs": [
       {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      },
-      {
         "internalType": "uint128",
-        "name": "",
+        "name": "payout",
         "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "",
+        "type": "uint48"
+      }
+    ],
+    "name": "withdrawAfter",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
       }
     ],
     "stateMutability": "view",
@@ -1563,6 +1964,11 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -1575,6 +1981,11 @@
   },
   {
     "inputs": [
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
       {
         "internalType": "uint256",
         "name": "tokenId",
@@ -1589,25 +2000,6 @@
   {
     "inputs": [],
     "name": "withdrawTimeout",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint48",
-        "name": "",
-        "type": "uint48"
-      }
-    ],
-    "name": "withdrawals",
     "outputs": [
       {
         "internalType": "uint64",
