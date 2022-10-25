@@ -101,13 +101,14 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "OnlyMaintainer",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "OnlyOracle",
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "roleId",
+        "type": "uint8"
+      }
+    ],
+    "name": "OnlyRole",
     "type": "error"
   },
   {
@@ -383,25 +384,6 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "maintainer",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "MaintainerUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": false,
         "internalType": "uint128",
         "name": "newMinDepo",
@@ -461,25 +443,6 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "oracle",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "OracleUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
         "name": "previousOwner",
         "type": "address"
       },
@@ -504,6 +467,31 @@
       }
     ],
     "name": "ReinforcementAbilityChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "actor",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "roleId",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      }
+    ],
+    "name": "RoleUpdated",
     "type": "event"
   },
   {
@@ -965,32 +953,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "maintainer",
-        "type": "address"
-      }
-    ],
-    "name": "checkMaintainer",
-    "outputs": [],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
-      }
-    ],
-    "name": "checkOracle",
-    "outputs": [],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
         "name": "account",
         "type": "address"
       }
@@ -1004,23 +966,18 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "core",
+        "name": "actor",
         "type": "address"
       },
       {
-        "internalType": "uint256",
-        "name": "start",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "count",
-        "type": "uint256"
+        "internalType": "uint8",
+        "name": "roleId",
+        "type": "uint8"
       }
     ],
-    "name": "claimAffiliateReward",
+    "name": "checkRole",
     "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1029,6 +986,11 @@
         "internalType": "address",
         "name": "core",
         "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
       }
     ],
     "name": "claimAffiliateReward",
@@ -1051,6 +1013,25 @@
         "internalType": "uint64",
         "name": "",
         "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "coreAffRewards",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",
@@ -1388,25 +1369,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "maintainers",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "minDepo",
     "outputs": [
@@ -1478,25 +1440,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "oracles",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "owner",
     "outputs": [
@@ -1560,6 +1503,25 @@
         "internalType": "uint64",
         "name": "claimedAt",
         "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "roles",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -1867,8 +1829,13 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "maintainer",
+        "name": "actor",
         "type": "address"
+      },
+      {
+        "internalType": "uint8",
+        "name": "roleId",
+        "type": "uint8"
       },
       {
         "internalType": "bool",
@@ -1876,25 +1843,7 @@
         "type": "bool"
       }
     ],
-    "name": "updateMaintainer",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "updateOracle",
+    "name": "updateRole",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
