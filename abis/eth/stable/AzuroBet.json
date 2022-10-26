@@ -240,7 +240,13 @@
       }
     ],
     "name": "burnBalance",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -258,7 +264,13 @@
       }
     ],
     "name": "burnPayout",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "payout",
+        "type": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },

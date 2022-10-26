@@ -423,7 +423,7 @@
       },
       {
         "internalType": "uint128",
-        "name": "profit",
+        "name": "affiliatesReward",
         "type": "uint128"
       },
       {
@@ -527,7 +527,7 @@
           },
           {
             "internalType": "uint128",
-            "name": "profit",
+            "name": "affiliatesReward",
             "type": "uint128"
           },
           {
@@ -627,7 +627,7 @@
           },
           {
             "internalType": "uint128",
-            "name": "profit",
+            "name": "affiliatesReward",
             "type": "uint128"
           },
           {

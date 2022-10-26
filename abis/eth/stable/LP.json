@@ -47,12 +47,22 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectActor",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectFee",
     "type": "error"
   },
   {
     "inputs": [],
     "name": "IncorrectPercent",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectReinforcementAbility",
     "type": "error"
   },
   {
@@ -104,7 +114,7 @@
     "inputs": [
       {
         "internalType": "uint8",
-        "name": "roleId",
+        "name": "role",
         "type": "uint8"
       }
     ],
@@ -126,19 +136,6 @@
     ],
     "name": "WithdrawalTimeout",
     "type": "error"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "newAffiliateFee",
-        "type": "uint64"
-      }
-    ],
-    "name": "AffiliateRewardChanged",
-    "type": "event"
   },
   {
     "anonymous": false,
@@ -277,12 +274,18 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "enum ILP.FeeType",
+        "name": "feeType",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
         "internalType": "uint64",
-        "name": "newDaoFee",
+        "name": "fee",
         "type": "uint64"
       }
     ],
-    "name": "DaoRewardChanged",
+    "name": "FeeChanged",
     "type": "event"
   },
   {
@@ -428,19 +431,6 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "newOracleFee",
-        "type": "uint64"
-      }
-    ],
-    "name": "OracleRewardChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
@@ -481,7 +471,7 @@
       {
         "indexed": false,
         "internalType": "uint8",
-        "name": "roleId",
+        "name": "role",
         "type": "uint8"
       },
       {
@@ -615,29 +605,17 @@
         "internalType": "address",
         "name": "oracle",
         "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "affiliated",
-        "type": "bool"
       }
     ],
     "name": "addReserve",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "affiliateFee",
     "outputs": [
       {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
+        "internalType": "uint128",
+        "name": "affiliatesReward",
+        "type": "uint128"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -844,19 +822,6 @@
     "inputs": [
       {
         "internalType": "uint64",
-        "name": "newAffiliateFee",
-        "type": "uint64"
-      }
-    ],
-    "name": "changeAffiliateFeeReward",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint64",
         "name": "newClaimTimeout",
         "type": "uint64"
       }
@@ -869,12 +834,17 @@
   {
     "inputs": [
       {
+        "internalType": "enum ILP.FeeType",
+        "name": "feeType",
+        "type": "uint8"
+      },
+      {
         "internalType": "uint64",
-        "name": "newDaoFee",
+        "name": "newFee",
         "type": "uint64"
       }
     ],
-    "name": "changeDaoFee",
+    "name": "changeFee",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -906,19 +876,6 @@
       }
     ],
     "name": "changeMinDepo",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint64",
-        "name": "newOracleFee",
-        "type": "uint64"
-      }
-    ],
-    "name": "changeOracleFee",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -971,7 +928,7 @@
       },
       {
         "internalType": "uint8",
-        "name": "roleId",
+        "name": "role",
         "type": "uint8"
       }
     ],
@@ -1081,23 +1038,10 @@
   },
   {
     "inputs": [],
-    "name": "daoFee",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "factory",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "contract IOwnable",
         "name": "",
         "type": "address"
       }
@@ -1235,25 +1179,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint48",
-        "name": "fromNumber",
-        "type": "uint48"
-      }
-    ],
-    "name": "getParent",
-    "outputs": [
-      {
-        "internalType": "uint48",
-        "name": "parentNumber",
-        "type": "uint48"
-      }
-    ],
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "getReserve",
     "outputs": [
@@ -1275,17 +1200,17 @@
       },
       {
         "internalType": "uint64",
-        "name": "daoFee_",
+        "name": "daoFee",
         "type": "uint64"
       },
       {
         "internalType": "uint64",
-        "name": "oracleFee_",
+        "name": "oracleFee",
         "type": "uint64"
       },
       {
         "internalType": "uint64",
-        "name": "affiliateFee_",
+        "name": "affiliateFee",
         "type": "uint64"
       },
       {
@@ -1421,19 +1346,6 @@
         "internalType": "uint128",
         "name": "withdrawAmount",
         "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "oracleFee",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
       }
     ],
     "stateMutability": "view",
@@ -1834,7 +1746,7 @@
       },
       {
         "internalType": "uint8",
-        "name": "roleId",
+        "name": "role",
         "type": "uint8"
       },
       {
@@ -1902,6 +1814,11 @@
         "internalType": "uint40",
         "name": "percent",
         "type": "uint40"
+      },
+      {
+        "internalType": "bool",
+        "name": "isNative",
+        "type": "bool"
       }
     ],
     "name": "withdrawLiquidity",
@@ -1912,24 +1829,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint48",
-        "name": "depNum",
-        "type": "uint48"
-      },
-      {
-        "internalType": "uint40",
-        "name": "percent",
-        "type": "uint40"
-      }
-    ],
-    "name": "withdrawLiquidityNative",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "core",
         "type": "address"
@@ -1938,27 +1837,14 @@
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isNative",
+        "type": "bool"
       }
     ],
     "name": "withdrawPayout",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdrawPayoutNative",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
