@@ -52,11 +52,6 @@
   },
   {
     "inputs": [],
-    "name": "IncorrectActor",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "IncorrectFee",
     "type": "error"
   },
@@ -124,6 +119,17 @@
       }
     ],
     "name": "OnlyRole",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum SafeCast.Type",
+        "name": "to",
+        "type": "uint8"
+      }
+    ],
+    "name": "SafeCastError",
     "type": "error"
   },
   {
