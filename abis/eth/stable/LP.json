@@ -536,6 +536,45 @@
   {
     "inputs": [
       {
+        "internalType": "uint48",
+        "name": "node",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "start",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "end",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "l",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "r",
+        "type": "uint48"
+      }
+    ],
+    "name": "_getLeavesAmount",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "gameId",
         "type": "uint256"
@@ -1086,6 +1125,25 @@
         "type": "uint256"
       }
     ],
+    "name": "fees",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "games",
     "outputs": [
       {
@@ -1173,16 +1231,6 @@
       {
         "internalType": "uint48",
         "name": "node",
-        "type": "uint48"
-      },
-      {
-        "internalType": "uint48",
-        "name": "start",
-        "type": "uint48"
-      },
-      {
-        "internalType": "uint48",
-        "name": "end",
         "type": "uint48"
       },
       {
