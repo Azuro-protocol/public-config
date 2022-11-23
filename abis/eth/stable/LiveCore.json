@@ -41,7 +41,7 @@
   },
   {
     "inputs": [],
-    "name": "DisputeNotPassed",
+    "name": "DisputePassed",
     "type": "error"
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "inputs": [],
-    "name": "IncorrectBettingPeriod",
+    "name": "IncorrectBatchLimits",
     "type": "error"
   },
   {
@@ -86,12 +86,12 @@
   },
   {
     "inputs": [],
-    "name": "MustPrevRewardsDisputePassed",
+    "name": "NoPendingReward",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "NoPendingReward",
+    "name": "NoRewards",
     "type": "error"
   },
   {
@@ -110,11 +110,6 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "OutOfBettingPeriod",
-    "type": "error"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint64",
@@ -123,6 +118,11 @@
       }
     ],
     "name": "ResolveTooEarly",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "RewardsExceeded",
     "type": "error"
   },
   {
@@ -165,11 +165,6 @@
   {
     "inputs": [],
     "name": "WrongOutcome",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "WrongRootOrDisputePassed",
     "type": "error"
   },
   {
@@ -441,7 +436,46 @@
   },
   {
     "inputs": [],
-    "name": "MULTIPLIERDEC",
+    "name": "ONE",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TENTHS1",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TENTHS2",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TENTHS5",
     "outputs": [
       {
         "internalType": "uint64",
@@ -469,18 +503,13 @@
       },
       {
         "internalType": "uint128",
-        "name": "coreRewards",
+        "name": "rewards",
         "type": "uint128"
       },
       {
-        "internalType": "uint64",
-        "name": "blockNumber",
-        "type": "uint64"
-      },
-      {
-        "internalType": "bool",
-        "name": "disputePassed",
-        "type": "bool"
+        "internalType": "uint128",
+        "name": "claimed",
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",
@@ -494,6 +523,30 @@
         "internalType": "contract IAzuroBet",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "batchIds",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -544,30 +597,6 @@
         "internalType": "uint64",
         "name": "startTime",
         "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "batchesIds",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -761,7 +790,7 @@
         "type": "uint256"
       }
     ],
-    "name": "conditionBatches",
+    "name": "conditionBatchCount",
     "outputs": [
       {
         "internalType": "uint256",
@@ -875,6 +904,40 @@
     "name": "executeBatch",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "batchId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getBatch",
+    "outputs": [
+      {
+        "internalType": "uint128[2]",
+        "name": "funds",
+        "type": "uint128[2]"
+      },
+      {
+        "internalType": "uint128",
+        "name": "startBlock",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint64[2]",
+        "name": "batchOdds",
+        "type": "uint64[2]"
+      },
+      {
+        "internalType": "uint64",
+        "name": "startTime",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1240,24 +1303,6 @@
   {
     "inputs": [
       {
-        "internalType": "bytes32",
-        "name": "merkleRoot",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint256",
-        "name": "rewardId",
-        "type": "uint256"
-      }
-    ],
-    "name": "releaseAffRewards",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "affiliate",
         "type": "address"
@@ -1324,6 +1369,25 @@
       }
     ],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "resolvedBatches",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
