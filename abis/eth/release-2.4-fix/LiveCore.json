@@ -707,6 +707,24 @@
     "inputs": [
       {
         "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64[2]",
+        "name": "newOdds",
+        "type": "uint64[2]"
+      }
+    ],
+    "name": "changeOddsByMaintainer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
         "name": "oracleConditionId",
         "type": "uint256"
       },
@@ -716,7 +734,7 @@
         "type": "uint64[2]"
       }
     ],
-    "name": "changeOdds",
+    "name": "changeOddsByOracle",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
