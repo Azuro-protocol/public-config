@@ -195,7 +195,7 @@
       },
       {
         "internalType": "uint64",
-        "name": "oracleFee",
+        "name": "dataProviderFee",
         "type": "uint64"
       },
       {

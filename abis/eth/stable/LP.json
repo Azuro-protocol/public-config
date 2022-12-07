@@ -1,11 +1,6 @@
 [
   {
     "inputs": [],
-    "name": "AmountMustNotBeZero",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "AmountNotSufficient",
     "type": "error"
   },
@@ -42,6 +37,11 @@
   },
   {
     "inputs": [],
+    "name": "GameAlreadyStarted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "GameCanceled_",
     "type": "error"
   },
@@ -53,6 +53,11 @@
   {
     "inputs": [],
     "name": "IncorrectFee",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectGameId",
     "type": "error"
   },
   {
@@ -280,6 +285,19 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "address",
+        "name": "newDataProvider",
+        "type": "address"
+      }
+    ],
+    "name": "DataProviderChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "enum ILP.FeeType",
         "name": "feeType",
         "type": "uint8"
@@ -405,12 +423,6 @@
   {
     "anonymous": false,
     "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "oracleGameId",
-        "type": "uint256"
-      },
       {
         "indexed": true,
         "internalType": "uint256",
@@ -581,13 +593,7 @@
       }
     ],
     "name": "addCondition",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "",
-        "type": "uint64"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -645,11 +651,6 @@
         "internalType": "uint48",
         "name": "leaf",
         "type": "uint48"
-      },
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
       }
     ],
     "name": "addReserve",
@@ -872,7 +873,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "oracleGameId",
+        "name": "gameId",
         "type": "uint256"
       }
     ],
@@ -890,6 +891,19 @@
       }
     ],
     "name": "changeClaimTimeout",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newDataProvider",
+        "type": "address"
+      }
+    ],
+    "name": "changeDataProvider",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1092,7 +1106,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "oracleGameId",
+        "name": "gameId",
         "type": "uint256"
       },
       {
@@ -1109,6 +1123,19 @@
     "name": "createGame",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "dataProvider",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1289,7 +1316,7 @@
       },
       {
         "internalType": "uint64",
-        "name": "oracleFee",
+        "name": "dataProviderFee",
         "type": "uint64"
       },
       {
@@ -1346,19 +1373,6 @@
         "internalType": "bool",
         "name": "",
         "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lastGameId",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -1430,25 +1444,6 @@
         "internalType": "uint128",
         "name": "withdrawAmount",
         "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "oracleGameIds",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -1615,7 +1610,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "oracleGameId",
+        "name": "gameId",
         "type": "uint256"
       },
       {
