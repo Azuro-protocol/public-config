@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "value": "Full time result"
+  },
+  {
+    "id": 2,
+    "value": "Double chance"
+  },
+  {
+    "id": 3,
+    "value": "Handicap"
+  },
+  {
+    "id": 4,
+    "value": "Total"
+  },
+  {
+    "id": 5,
+    "value": "Individual Total 1"
+  },
+  {
+    "id": 6,
+    "value": "Individual Total 2"
+  },
+  {
+    "id": 7,
+    "value": "Individual Total"
+  },
+  {
+    "id": 8,
+    "value": "Scored"
+  },
+  {
+    "id": 9,
+    "value": "Both Teams To Score"
+  },
+  {
+    "id": 10,
+    "value": "Correct Score"
+  },
+  {
+    "id": 11,
+    "value": "To Score"
+  },
+  {
+    "id": 14,
+    "value": "Total Even"
+  },
+  {
+    "id": 15,
+    "value": "Individual Total Even"
+  },
+  {
+    "id": 16,
+    "value": "Individual To Score"
+  },
+  {
+    "id": 17,
+    "value": "HT-FT"
+  },
+  {
+    "id": 18,
+    "value": "European handicap (3w)"
+  },
+  {
+    "id": 19,
+    "value": "Winner of match"
+  },
+  {
+    "id": 20,
+    "value": "Winner of 1st map"
+  },
+  {
+    "id": 21,
+    "value": "Winner of 2nd map"
+  },
+  {
+    "id": 22,
+    "value": "Race To"
+  },
+  {
+    "id": 23,
+    "value": "Will there be"
+  },
+  {
+    "id": 24,
+    "value": "Who First"
+  }
+]
