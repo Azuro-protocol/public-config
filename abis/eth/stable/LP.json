@@ -37,11 +37,6 @@
   },
   {
     "inputs": [],
-    "name": "GameAlreadyStarted",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "GameCanceled_",
     "type": "error"
   },
@@ -593,7 +588,13 @@
       }
     ],
     "name": "addCondition",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },

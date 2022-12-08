@@ -46,6 +46,11 @@
   },
   {
     "inputs": [],
+    "name": "GameAlreadyStarted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectBatchLimits",
     "type": "error"
   },
