@@ -108,17 +108,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint8",
-        "name": "role",
-        "type": "uint8"
-      }
-    ],
-    "name": "OnlyRole",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "enum SafeCast.Type",
         "name": "to",
         "type": "uint8"
@@ -478,31 +467,6 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "actor",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint8",
-        "name": "role",
-        "type": "uint8"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "RoleUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
         "name": "from",
         "type": "address"
       },
@@ -569,6 +533,19 @@
         "internalType": "uint128",
         "name": "amount",
         "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "access",
+    "outputs": [
+      {
+        "internalType": "contract IAccess",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -990,27 +967,32 @@
         "internalType": "address",
         "name": "account",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
       }
     ],
-    "name": "checkOwner",
+    "name": "checkAccess",
     "outputs": [],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "actor",
+        "name": "account",
         "type": "address"
-      },
-      {
-        "internalType": "uint8",
-        "name": "role",
-        "type": "uint8"
       }
     ],
-    "name": "checkRole",
+    "name": "checkOwner",
     "outputs": [],
     "stateMutability": "view",
     "type": "function"
@@ -1307,6 +1289,16 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "access_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "dataProvider_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "token_",
         "type": "address"
       },
@@ -1324,11 +1316,6 @@
         "internalType": "uint64",
         "name": "affiliateFee",
         "type": "uint64"
-      },
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
       }
     ],
     "name": "initialize",
@@ -1514,25 +1501,6 @@
         "internalType": "uint64",
         "name": "claimedAt",
         "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "roles",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -1834,29 +1802,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "actor",
-        "type": "address"
-      },
-      {
-        "internalType": "uint8",
-        "name": "role",
-        "type": "uint8"
-      },
-      {
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "updateRole",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {

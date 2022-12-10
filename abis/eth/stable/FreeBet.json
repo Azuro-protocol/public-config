@@ -41,11 +41,6 @@
   },
   {
     "inputs": [],
-    "name": "OnlyMaintainer",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "UnknownCore",
     "type": "error"
   },
@@ -340,25 +335,6 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "maintainer",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "MaintainerUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
         "name": "previousOwner",
         "type": "address"
       },
@@ -396,19 +372,6 @@
     ],
     "name": "Transfer",
     "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "LP",
-    "outputs": [
-      {
-        "internalType": "contract ILP",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
   },
   {
     "inputs": [
@@ -685,19 +648,13 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "maintainers",
+    "inputs": [],
+    "name": "lp",
     "outputs": [
       {
-        "internalType": "bool",
+        "internalType": "contract ILP",
         "name": "",
-        "type": "bool"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -1049,7 +1006,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "lp",
+        "name": "lp_",
         "type": "address"
       }
     ],
@@ -1154,24 +1111,6 @@
       }
     ],
     "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "maintainer",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "active",
-        "type": "bool"
-      }
-    ],
-    "name": "updateMaintainer",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

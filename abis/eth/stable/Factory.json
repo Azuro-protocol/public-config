@@ -72,6 +72,12 @@
       {
         "indexed": false,
         "internalType": "address",
+        "name": "access",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
         "name": "lp",
         "type": "address"
       },
@@ -109,6 +115,19 @@
     ],
     "name": "OwnershipTransferred",
     "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "beaconAccess",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [],
@@ -207,11 +226,6 @@
         "internalType": "string",
         "name": "coreType",
         "type": "string"
-      },
-      {
-        "internalType": "address",
-        "name": "oracle",
-        "type": "address"
       }
     ],
     "name": "createPool",
@@ -221,6 +235,11 @@
   },
   {
     "inputs": [
+      {
+        "internalType": "address",
+        "name": "beaconAccess_",
+        "type": "address"
+      },
       {
         "internalType": "address",
         "name": "beaconAzuroBet_",

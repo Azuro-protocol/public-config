@@ -101,11 +101,6 @@
   },
   {
     "inputs": [],
-    "name": "OnlyAffMaster",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "OnlyBetOwner",
     "type": "error"
   },
@@ -701,20 +696,7 @@
         "type": "uint256"
       }
     ],
-    "name": "cancelByMaintainer",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
-    "name": "cancelByOracle",
+    "name": "cancelCondition",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
