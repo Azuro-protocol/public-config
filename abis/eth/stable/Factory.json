@@ -291,6 +291,29 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "lp",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "coreType",
+        "type": "string"
+      }
+    ],
+    "name": "plugExpress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       }
