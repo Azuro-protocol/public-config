@@ -72,6 +72,17 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "OnlyOracle",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint64",
         "name": "waitTime",
         "type": "uint64"
@@ -429,6 +440,11 @@
         "type": "uint64"
       },
       {
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      },
+      {
         "internalType": "uint64",
         "name": "endsAt",
         "type": "uint64"
@@ -536,6 +552,11 @@
             "internalType": "uint64",
             "name": "margin",
             "type": "uint64"
+          },
+          {
+            "internalType": "address",
+            "name": "oracle",
+            "type": "address"
           },
           {
             "internalType": "uint64",
@@ -657,6 +678,11 @@
             "type": "uint64"
           },
           {
+            "internalType": "address",
+            "name": "oracle",
+            "type": "address"
+          },
+          {
             "internalType": "uint64",
             "name": "endsAt",
             "type": "uint64"
@@ -701,6 +727,25 @@
     "name": "initialize",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "isConditionCanceled",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
