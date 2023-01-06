@@ -1,4 +1,4 @@
-- ./arrays/marketNames.json → [QmcL1vj3FkD7kThhyk151XE6nJ2eqvhWiLCjadyCavcxAC](https://ipfs.bookmaker.xyz/ipfs/QmcL1vj3FkD7kThhyk151XE6nJ2eqvhWiLCjadyCavcxAC)
+- ./arrays/marketNames.json → [QmSx8Pod2Egpk67wEYHyobyyT2ASfKj93E8CqGQmNwxg5u](https://ipfs.bookmaker.xyz/ipfs/QmSx8Pod2Egpk67wEYHyobyyT2ASfKj93E8CqGQmNwxg5u)
 
 - ./arrays/points.json → [QmcdMMfp9kSea3cJ5aXTjwq9AH17BYxi2x6Xf9e8yaLKBS](https://ipfs.bookmaker.xyz/ipfs/QmcdMMfp9kSea3cJ5aXTjwq9AH17BYxi2x6Xf9e8yaLKBS)
 
@@ -12,7 +12,7 @@
 
 - ./arrays/gameTypes.json → [QmZa2yNy1zzwbcr4cwHDyjfEaM46Dxt2b8MVknYj8QU5z1](https://ipfs.bookmaker.xyz/ipfs/QmZa2yNy1zzwbcr4cwHDyjfEaM46Dxt2b8MVknYj8QU5z1)
 
-- ./arrays/marketDescriptions.json → [QmP2HXdd45uYYcJjwr6A7kqzXrkYJkzXYjk9Bj3eEY45qz](https://ipfs.bookmaker.xyz/ipfs/QmP2HXdd45uYYcJjwr6A7kqzXrkYJkzXYjk9Bj3eEY45qz)
+- ./arrays/marketDescriptions.json → [QmfZWFjxVfvHuhMpCzGPAJCF6nwq2DvvSz39vJRXxf5vq5](https://ipfs.bookmaker.xyz/ipfs/QmfZWFjxVfvHuhMpCzGPAJCF6nwq2DvvSz39vJRXxf5vq5)
 
 - ./arrays/selections.json → [Qmec1ywJMh2YS2uX14YrGipUgpfcNP4jFeXz9UvUjF6Z5t](https://ipfs.bookmaker.xyz/ipfs/Qmec1ywJMh2YS2uX14YrGipUgpfcNP4jFeXz9UvUjF6Z5t)
 
