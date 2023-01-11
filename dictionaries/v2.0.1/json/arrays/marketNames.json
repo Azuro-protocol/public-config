@@ -1,0 +1,382 @@
+[
+  {
+    "id": 1,
+    "value": "Full Time Result"
+  },
+  {
+    "id": 2,
+    "value": "Double Chance"
+  },
+  {
+    "id": 3,
+    "value": "Handicap"
+  },
+  {
+    "id": 4,
+    "value": "Total Goals"
+  },
+  {
+    "id": 9,
+    "value": "Both Teams To Score"
+  },
+  {
+    "id": 19,
+    "value": "Match Winner"
+  },
+  {
+    "id": 19,
+    "value": "Match Winner"
+  },
+  {
+    "id": 19,
+    "value": "Match Winner"
+  },
+  {
+    "id": 19,
+    "value": "Match Winner"
+  },
+  {
+    "id": 19,
+    "value": "Match Winner"
+  },
+  {
+    "id": 3,
+    "value": "Handicap Corners"
+  },
+  {
+    "id": 3,
+    "value": "Handicap Games"
+  },
+  {
+    "id": 3,
+    "value": "Maps Handicap"
+  },
+  {
+    "id": 3,
+    "value": "Handicap Sets"
+  },
+  {
+    "id": 3,
+    "value": "Handicap"
+  },
+  {
+    "id": 4,
+    "value": "Total Corners"
+  },
+  {
+    "id": 4,
+    "value": "Total Games"
+  },
+  {
+    "id": 4,
+    "value": "Total Kills"
+  },
+  {
+    "id": 4,
+    "value": "Total Maps"
+  },
+  {
+    "id": 4,
+    "value": "Total Points"
+  },
+  {
+    "id": 7,
+    "value": "Team 1 - Total Goals"
+  },
+  {
+    "id": 7,
+    "value": "Player 1 - Total Games"
+  },
+  {
+    "id": 7,
+    "value": "Team 1 Total Kills"
+  },
+  {
+    "id": 7,
+    "value": "1st Team - Individual Total Points"
+  },
+  {
+    "id": 7,
+    "value": "Team 2 - Total Goals"
+  },
+  {
+    "id": 7,
+    "value": "Player 2 - Total Games"
+  },
+  {
+    "id": 7,
+    "value": "Team 2 Total Kills"
+  },
+  {
+    "id": 7,
+    "value": "2nd Team - Individual Total Points"
+  },
+  {
+    "id": 1,
+    "value": "1st Half - Winner"
+  },
+  {
+    "id": 2,
+    "value": "1st Half - Double Chance"
+  },
+  {
+    "id": 3,
+    "value": "1st Half - Handicap"
+  },
+  {
+    "id": 4,
+    "value": "1st Half - Total Points"
+  },
+  {
+    "id": 4,
+    "value": "1st Half - Total Corners"
+  },
+  {
+    "id": 7,
+    "value": "1st Half - Team 1 - Total Goals"
+  },
+  {
+    "id": 7,
+    "value": "1st Half - Team 2 - Total Goals"
+  },
+  {
+    "id": 9,
+    "value": "1st Half - Both Teams To Score"
+  },
+  {
+    "id": 11,
+    "value": "1st Half - Either Team To Score"
+  },
+  {
+    "id": 19,
+    "value": "1st Half - Full Time Result"
+  },
+  {
+    "id": 3,
+    "value": "Map 1 - Kill Handicap"
+  },
+  {
+    "id": 3,
+    "value": "Map 1 - Handicap"
+  },
+  {
+    "id": 4,
+    "value": "Map 1 - Total Kills"
+  },
+  {
+    "id": 4,
+    "value": "Map 1 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 1 - Team 1 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 1 - Team 2 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 1 - Team 1 Total Kills"
+  },
+  {
+    "id": 7,
+    "value": "Map 1 - Team 2 Total Kills"
+  },
+  {
+    "id": 19,
+    "value": "Map 1 - Winner"
+  },
+  {
+    "id": 19,
+    "value": "Map 1 - Winner"
+  },
+  {
+    "id": 20,
+    "value": "Map 1 - Winner"
+  },
+  {
+    "id": 23,
+    "value": "Map 1 - Overtime"
+  },
+  {
+    "id": 24,
+    "value": "Map 1 - 1st Barracks"
+  },
+  {
+    "id": 24,
+    "value": "Map 1 - 1st Blood"
+  },
+  {
+    "id": 24,
+    "value": "Map 1 - 1st Tower"
+  },
+  {
+    "id": 24,
+    "value": "Map 1 - 1st Roshan"
+  },
+  {
+    "id": 3,
+    "value": "Map 2 - Kill Handicap"
+  },
+  {
+    "id": 3,
+    "value": "Map 2 - Handicap"
+  },
+  {
+    "id": 4,
+    "value": "Map 2 - Total Kills"
+  },
+  {
+    "id": 4,
+    "value": "Map 2 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 2 - Team 1 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 2 - Team 2 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 2 - Team 1 Total Kills"
+  },
+  {
+    "id": 7,
+    "value": "Map 2 - Team 2 Total Kills"
+  },
+  {
+    "id": 19,
+    "value": "Map 2 - Winner"
+  },
+  {
+    "id": 19,
+    "value": "Map 2 - Winner"
+  },
+  {
+    "id": 23,
+    "value": "Map 2 - Overtime"
+  },
+  {
+    "id": 24,
+    "value": "Map 2 - 1st Barracks"
+  },
+  {
+    "id": 24,
+    "value": "Map 2 - 1st Blood"
+  },
+  {
+    "id": 24,
+    "value": "Map 2 - 1st Roshan"
+  },
+  {
+    "id": 24,
+    "value": "Map 2 - 1st Tower"
+  },
+  {
+    "id": 3,
+    "value": "Map 3 - Kill Handicap"
+  },
+  {
+    "id": 3,
+    "value": "Map 3 - Handicap"
+  },
+  {
+    "id": 4,
+    "value": "Map 3 - Total Kills"
+  },
+  {
+    "id": 4,
+    "value": "Map 3 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 3 - Team 1 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 3 - Team 2 - Total Rounds"
+  },
+  {
+    "id": 7,
+    "value": "Map 3 - Team 1 Total Kills"
+  },
+  {
+    "id": 7,
+    "value": "Map 3 - Team 2 Total Kills"
+  },
+  {
+    "id": 19,
+    "value": "Map 3 - Winner"
+  },
+  {
+    "id": 19,
+    "value": "Map 3 - Winner"
+  },
+  {
+    "id": 21,
+    "value": "Map 2 - Winner"
+  },
+  {
+    "id": 23,
+    "value": "Map 3 - Overtime"
+  },
+  {
+    "id": 24,
+    "value": "Map 3 - 1st Barracks"
+  },
+  {
+    "id": 24,
+    "value": "Map 3 - 1st Blood"
+  },
+  {
+    "id": 24,
+    "value": "Map 3 - 1st Roshan"
+  },
+  {
+    "id": 24,
+    "value": "Map 3 - 1st Tower"
+  },
+  {
+    "id": 19,
+    "value": "Map 4 - Winner"
+  },
+  {
+    "id": 19,
+    "value": "Map 5 - Winner"
+  },
+  {
+    "id": 3,
+    "value": "Match - Kill Handicap"
+  },
+  {
+    "id": 16,
+    "value": "Will Team 1 Win At Least One Map?"
+  },
+  {
+    "id": 16,
+    "value": "Will Team 2 Win At Least One Map?"
+  },
+  {
+    "id": 19,
+    "value": "Winner of the 1st set"
+  },
+  {
+    "id": 19,
+    "value": "Full Time Result"
+  },
+  {
+    "id": 19,
+    "value": "To Qualify"
+  },
+  {
+    "id": 19,
+    "value": "To Win Competition"
+  },
+  {
+    "id": 19,
+    "value": "To Take 3rd Place"
+  }
+]
