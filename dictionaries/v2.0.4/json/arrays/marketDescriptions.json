@@ -1,0 +1,398 @@
+[
+  {
+    "id": 1,
+    "value": "You predict the result of a match at the end of regular play. Bets can be placed by either selecting a Team 1 Win, a Draw or a Team 2 Win"
+  },
+  {
+    "id": 2,
+    "value": "A market that allows you to cover two of the three possible outcomes in a game with one bet. It is similar to full time result betting but effectively you back two outcomes in 1 bet."
+  },
+  {
+    "id": 3,
+    "value": "Will Team 1 beat Team 2 in the number of goals adjusted for handicap for regular time?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total goals by both teams be over or under the predicted score for regular time?"
+  },
+  {
+    "id": 9,
+    "value": "A market where you predict whether or not both teams will score at least one goal in the game. You can bet on «yes» if you think that both teams will score or «no» if you think that one of the teams will not score."
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the match?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the match?"
+  },
+  {
+    "id": 19,
+    "value": "Which player will win the match?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the match?"
+  },
+  {
+    "id": 19,
+    "value": "Which fighter will win? In the event of a draw, you will receive a refund."
+  },
+  {
+    "id": 3,
+    "value": "Will a certain team shoot more corner kicks adjusted for a handicap than the opponent in a match?"
+  },
+  {
+    "id": 3,
+    "value": "Will the number of games adjusted for handicap played throughout the match exceed the stated number?"
+  },
+  {
+    "id": 3,
+    "value": "Will Team 1 beat Team 2 in the number of maps adjusted for handicap?"
+  },
+  {
+    "id": 3,
+    "value": "Will the number of sets adjusted for handicap played throughout the match exceed the stated number?"
+  },
+  {
+    "id": 3,
+    "value": "Will Team 1 beat Team 2 in the number of goals adjusted for handicap for the whole match including OT?"
+  },
+  {
+    "id": 3,
+    "value": "Will Team 1 beat Team 2 in the number of points adjusted for handicap?"
+  },
+  {
+    "id": 4,
+    "value": "Will the overall number of corner kicks in a match exceed the predetermined amount?"
+  },
+  {
+    "id": 4,
+    "value": "How many games will it take to complete the match?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total kills by both teams be over or under the predicted score for all maps"
+  },
+  {
+    "id": 4,
+    "value": "Will the total number of maps played be more or less than the forecasted score?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total points by both teams be over or under the predicted score for regular time?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total goals by both teams be over or under the predicted score for the whole match including OT?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total points by both teams be over or under the predicted score for the whole match including OT?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total amount of goals scored within a game by Team 1 exceed the specified number at the end of regulation time?"
+  },
+  {
+    "id": 7,
+    "value": "How many games will Player 1 win?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by first team be over or under the predicted score for all maps?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total points by 1st Team be over or under the predicted score for the whole match including OT?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total amount of goals scored within a game by Team 2 exceed the specified number for the whole match including OT?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total amount of goals scored within a game by Team 2 exceed the specified number at the end of regulation time?"
+  },
+  {
+    "id": 7,
+    "value": "How many games will Player 2 win?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by second team be over or under the predicted score for all maps?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total points by 2nd Team be over or under the predicted score for the whole match including OT?"
+  },
+  {
+    "id": 1,
+    "value": "Which team will win the 1st half of the match?"
+  },
+  {
+    "id": 2,
+    "value": "Which team will win the 1st half of the match or will there be a draw?"
+  },
+  {
+    "id": 3,
+    "value": "Will Team 1 beat Team 2 in the number of points adjusted for handicap in the first half of the game?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total points by both teams be over or under the predicted score for 1st Half?"
+  },
+  {
+    "id": 4,
+    "value": "Will the overall number of corner kicks exceed the predetermined amount in the first half of the match?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of goals scored by Team 1 only in the first half of the match be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of goals scored by Team 2 only in the first half of the match be more or less than the forecasted score?"
+  },
+  {
+    "id": 9,
+    "value": "Will both teams score at least one goal in the first half of the game?"
+  },
+  {
+    "id": 11,
+    "value": "Will any of the teams score at least one goal in the first half of the match?"
+  },
+  {
+    "id": 19,
+    "value": "During 1st Half, which team will win or in case of draw you will receive the refund?"
+  },
+  {
+    "id": 3,
+    "value": "Will the number of kills that have been adjusted for the handicap be higher than the opposing team's on this map?"
+  },
+  {
+    "id": 3,
+    "value": "Will the amount of rounds adjusted for handicap in the 1nd map be more than that of the opposing team?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total kills by both teams be over or under the predicted score on this map"
+  },
+  {
+    "id": 4,
+    "value": "Will the total number of rounds scored by both sides in the 1st map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of rounds scored by Team 1 in the 1st map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of rounds scored by Team 2 in the 1st map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by first team be over or under the predicted score in this map?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by second team be over or under the predicted score in this map?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the map?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the 1st map of the match?"
+  },
+  {
+    "id": 20,
+    "value": "Which team will win the match?"
+  },
+  {
+    "id": 23,
+    "value": "Will there be overtime in the 1st map?"
+  },
+  {
+    "id": 24,
+    "value": "Which team will destroy the barrack first"
+  },
+  {
+    "id": 24,
+    "value": "Which team will get the first kill"
+  },
+  {
+    "id": 24,
+    "value": "Which team will destroy the tower first"
+  },
+  {
+    "id": 24,
+    "value": "Which team will slay the first Roshan"
+  },
+  {
+    "id": 3,
+    "value": "Will the number of kills that have been adjusted for the handicap be higher than the opposing team's on this map?"
+  },
+  {
+    "id": 3,
+    "value": "Will the amount of rounds adjusted for handicap in the 2nd map be more than that of the opposing team?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total kills by both teams be over or under the predicted score on this map"
+  },
+  {
+    "id": 4,
+    "value": "Will the total number of rounds scored by both sides in the 2nd map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of rounds scored by Team 1 in the 2nd map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of rounds scored by Team 2 in the 2nd map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by first team be over or under the predicted score in this map?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by second team be over or under the predicted score in this map?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the map?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the 2nd map of the match?"
+  },
+  {
+    "id": 23,
+    "value": "Will there be overtime in the 2nd map?"
+  },
+  {
+    "id": 24,
+    "value": "Which team will destroy the barrack first"
+  },
+  {
+    "id": 24,
+    "value": "Which team will get the first kill"
+  },
+  {
+    "id": 24,
+    "value": "Which team will slay the first Roshan"
+  },
+  {
+    "id": 24,
+    "value": "Which team will destroy the tower first"
+  },
+  {
+    "id": 3,
+    "value": "Will the number of kills that have been adjusted for the handicap be higher than the opposing team's on this map?"
+  },
+  {
+    "id": 3,
+    "value": "Will the amount of rounds adjusted for handicap in the 3rd map be more than that of the opposing team?"
+  },
+  {
+    "id": 4,
+    "value": "Will the total kills by both teams be over or under the predicted score on this map"
+  },
+  {
+    "id": 4,
+    "value": "Will the total number of rounds scored by both sides in the 3rd map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of rounds scored by Team 1 in the 3rd map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total number of rounds scored by Team 2 in the 3rd map be more or less than the forecasted score?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by first team be over or under the predicted score in this map?"
+  },
+  {
+    "id": 7,
+    "value": "Will the total kills by second team be over or under the predicted score in this map?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the map?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the 3rd map of the match?"
+  },
+  {
+    "id": 21,
+    "value": "Which team will win the match?"
+  },
+  {
+    "id": 23,
+    "value": "Will there be overtime in the 3rd map?"
+  },
+  {
+    "id": 24,
+    "value": "Which team will destroy the barrack first"
+  },
+  {
+    "id": 24,
+    "value": "Which team will get the first kill"
+  },
+  {
+    "id": 24,
+    "value": "Which team will slay the first Roshan"
+  },
+  {
+    "id": 24,
+    "value": "Which team will destroy the tower first"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the map?"
+  },
+  {
+    "id": 19,
+    "value": "Which team will win the map?"
+  },
+  {
+    "id": 3,
+    "value": "Will the number of kills that have been adjusted for the handicap be higher than the opposing team's?"
+  },
+  {
+    "id": 16,
+    "value": "Will Team 1 win at least in one map? If you bet on Yes you will win if Team 1 will win in 1 or more maps during the match."
+  },
+  {
+    "id": 16,
+    "value": "Will Team 2 win at least in one map? If you bet on Yes you will win if Team 2 will win in 1 or more maps during the match."
+  },
+  {
+    "id": 19,
+    "value": "Which player will win the first set?"
+  },
+  {
+    "id": 19,
+    "value": "During regular time, which team will win or in case of draw you will receive the refund?"
+  },
+  {
+    "id": 19,
+    "value": "Choose which team will qualify for the next game in the tournament"
+  },
+  {
+    "id": 19,
+    "value": "Choose which team will win the tournament"
+  },
+  {
+    "id": 19,
+    "value": "Choose which team will take the 3rd Place"
+  }
+]

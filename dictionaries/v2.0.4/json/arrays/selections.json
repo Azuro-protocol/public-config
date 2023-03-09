@@ -1,0 +1,214 @@
+[
+  {
+    "id": 1,
+    "value": "1"
+  },
+  {
+    "id": 2,
+    "value": "X"
+  },
+  {
+    "id": 3,
+    "value": "2"
+  },
+  {
+    "id": 4,
+    "value": "1X"
+  },
+  {
+    "id": 5,
+    "value": "12"
+  },
+  {
+    "id": 6,
+    "value": "2X"
+  },
+  {
+    "id": 7,
+    "value": "H1"
+  },
+  {
+    "id": 8,
+    "value": "H2"
+  },
+  {
+    "id": 9,
+    "value": "Over"
+  },
+  {
+    "id": 10,
+    "value": "Under"
+  },
+  {
+    "id": 11,
+    "value": "Over"
+  },
+  {
+    "id": 12,
+    "value": "Under"
+  },
+  {
+    "id": 13,
+    "value": "Over"
+  },
+  {
+    "id": 14,
+    "value": "Under"
+  },
+  {
+    "id": 15,
+    "value": "Over"
+  },
+  {
+    "id": 16,
+    "value": "Under"
+  },
+  {
+    "id": 17,
+    "value": "Yes"
+  },
+  {
+    "id": 18,
+    "value": "No"
+  },
+  {
+    "id": 19,
+    "value": "Yes"
+  },
+  {
+    "id": 20,
+    "value": "No"
+  },
+  {
+    "id": 21,
+    "value": "Yes"
+  },
+  {
+    "id": 22,
+    "value": "No"
+  },
+  {
+    "id": 23,
+    "value": "Yes"
+  },
+  {
+    "id": 24,
+    "value": "No"
+  },
+  {
+    "id": 180,
+    "value": "Yes"
+  },
+  {
+    "id": 181,
+    "value": "No"
+  },
+  {
+    "id": 182,
+    "value": "Yes"
+  },
+  {
+    "id": 183,
+    "value": "No"
+  },
+  {
+    "id": 184,
+    "value": "Yes"
+  },
+  {
+    "id": 185,
+    "value": "No"
+  },
+  {
+    "id": 186,
+    "value": "Yes"
+  },
+  {
+    "id": 187,
+    "value": "No"
+  },
+  {
+    "id": 190,
+    "value": "1"
+  },
+  {
+    "id": 191,
+    "value": "2"
+  },
+  {
+    "id": 192,
+    "value": "Yes"
+  },
+  {
+    "id": 193,
+    "value": "No"
+  },
+  {
+    "id": 194,
+    "value": "1"
+  },
+  {
+    "id": 195,
+    "value": "2"
+  },
+  {
+    "id": 424,
+    "value": "1"
+  },
+  {
+    "id": 425,
+    "value": "X"
+  },
+  {
+    "id": 426,
+    "value": "2"
+  },
+  {
+    "id": 731,
+    "value": "Correct Score"
+  },
+  {
+    "id": 10000,
+    "value": "1/1"
+  },
+  {
+    "id": 10001,
+    "value": "1/X"
+  },
+  {
+    "id": 10002,
+    "value": "1/2"
+  },
+  {
+    "id": 10003,
+    "value": "X/1"
+  },
+  {
+    "id": 10004,
+    "value": "X/X"
+  },
+  {
+    "id": 10005,
+    "value": "X/2"
+  },
+  {
+    "id": 10006,
+    "value": "2/1"
+  },
+  {
+    "id": 10007,
+    "value": "2/X"
+  },
+  {
+    "id": 10008,
+    "value": "2/2"
+  },
+  {
+    "id": 10009,
+    "value": "1"
+  },
+  {
+    "id": 10010,
+    "value": "2"
+  }
+]
