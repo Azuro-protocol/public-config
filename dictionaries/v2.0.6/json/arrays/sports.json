@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "value": "Table Tennis"
+  },
+  {
+    "id": 2,
+    "value": "Netball"
+  },
+  {
+    "id": 3,
+    "value": "Horse Racing AntePost"
+  },
+  {
+    "id": 4,
+    "value": "Athletics"
+  },
+  {
+    "id": 5,
+    "value": "Gaelic Football"
+  },
+  {
+    "id": 6,
+    "value": "Hurling"
+  },
+  {
+    "id": 7,
+    "value": "Trotting"
+  },
+  {
+    "id": 8,
+    "value": "Horse Racing"
+  },
+  {
+    "id": 9,
+    "value": "Surfing"
+  },
+  {
+    "id": 10,
+    "value": "Sailing"
+  },
+  {
+    "id": 11,
+    "value": "Beach Soccer"
+  },
+  {
+    "id": 12,
+    "value": "Motorsport"
+  },
+  {
+    "id": 13,
+    "value": "Chess"
+  },
+  {
+    "id": 14,
+    "value": "Golf"
+  },
+  {
+    "id": 15,
+    "value": "Billiards"
+  },
+  {
+    "id": 16,
+    "value": "Lottery"
+  },
+  {
+    "id": 17,
+    "value": "Curling"
+  },
+  {
+    "id": 18,
+    "value": "Water Polo"
+  },
+  {
+    "id": 19,
+    "value": "Speedway"
+  },
+  {
+    "id": 20,
+    "value": "Trotting AntePost"
+  },
+  {
+    "id": 21,
+    "value": "Futsal"
+  },
+  {
+    "id": 22,
+    "value": "Special bets"
+  },
+  {
+    "id": 23,
+    "value": "Ski Jumping"
+  },
+  {
+    "id": 24,
+    "value": "Skiing"
+  },
+  {
+    "id": 25,
+    "value": "Rugby"
+  },
+  {
+    "id": 26,
+    "value": "Volleyball"
+  },
+  {
+    "id": 27,
+    "value": "Handball"
+  },
+  {
+    "id": 28,
+    "value": "Baseball"
+  },
+  {
+    "id": 29,
+    "value": "Boxing"
+  },
+  {
+    "id": 30,
+    "value": "Formula 1"
+  },
+  {
+    "id": 31,
+    "value": "Basketball"
+  },
+  {
+    "id": 32,
+    "value": "Ice Hockey"
+  },
+  {
+    "id": 33,
+    "value": "Football"
+  },
+  {
+    "id": 34,
+    "value": "Snooker"
+  },
+  {
+    "id": 35,
+    "value": "Australian Rules"
+  },
+  {
+    "id": 36,
+    "value": "MMA"
+  },
+  {
+    "id": 37,
+    "value": "Biathlon"
+  },
+  {
+    "id": 38,
+    "value": "Motorbikes"
+  },
+  {
+    "id": 39,
+    "value": "Bicycle Racing"
+  },
+  {
+    "id": 40,
+    "value": "Cricket"
+  },
+  {
+    "id": 41,
+    "value": "Bowls"
+  },
+  {
+    "id": 42,
+    "value": "TV-Games"
+  },
+  {
+    "id": 43,
+    "value": "Darts"
+  },
+  {
+    "id": 44,
+    "value": "American Football"
+  },
+  {
+    "id": 45,
+    "value": "Tennis"
+  },
+  {
+    "id": 46,
+    "value": "Badminton"
+  },
+  {
+    "id": 47,
+    "value": "Esports"
+  },
+  {
+    "id": 48,
+    "value": "Floorball"
+  },
+  {
+    "id": 49,
+    "value": "Sumo"
+  },
+  {
+    "id": 50,
+    "value": "Beach Volleyball"
+  },
+  {
+    "id": 51,
+    "value": "Field Hockey"
+  },
+  {
+    "id": 52,
+    "value": "Squash"
+  },
+  {
+    "id": 53,
+    "value": "Crossfit"
+  },
+  {
+    "id": 54,
+    "value": "Softball"
+  },
+  {
+    "id": 55,
+    "value": "Bandy"
+  },
+  {
+    "id": 56,
+    "value": "Politics"
+  },
+  {
+    "id": 57,
+    "value": "Aussie Rules"
+  },
+  {
+    "id": 58,
+    "value": "Rugby League"
+  },
+  {
+    "id": 59,
+    "value": "Rugby Union"
+  },
+  {
+    "id": 60,
+    "value": "Rugby League Nines"
+  },
+  {
+    "id": 61,
+    "value": "Rugby Union Sevens"
+  },
+  {
+    "id": 1000,
+    "value": "Dota 2"
+  },
+  {
+    "id": 1001,
+    "value": "CS:GO"
+  },
+  {
+    "id": 1002,
+    "value": "League of Legends"
+  },
+  {
+    "id": 1003,
+    "value": "StarCraft II"
+  },
+  {
+    "id": 1004,
+    "value": "Age of Empires"
+  },
+  {
+    "id": 1005,
+    "value": "Arena of Valor"
+  },
+  {
+    "id": 1006,
+    "value": "Artifact"
+  },
+  {
+    "id": 1007,
+    "value": "Call of Duty"
+  },
+  {
+    "id": 1008,
+    "value": "Clash Royale"
+  },
+  {
+    "id": 1009,
+    "value": "Dragon Ball FighterZ"
+  },
+  {
+    "id": 1010,
+    "value": "FIFA"
+  },
+  {
+    "id": 1011,
+    "value": "Fortnite"
+  },
+  {
+    "id": 1012,
+    "value": "Halo"
+  },
+  {
+    "id": 1013,
+    "value": "Hearthstone"
+  },
+  {
+    "id": 1014,
+    "value": "Heroes of the Storm"
+  },
+  {
+    "id": 1015,
+    "value": "King of Glory"
+  },
+  {
+    "id": 1016,
+    "value": "Madden"
+  },
+  {
+    "id": 1017,
+    "value": "Magic"
+  },
+  {
+    "id": 1018,
+    "value": "NBA2K"
+  },
+  {
+    "id": 1019,
+    "value": "Overwatch"
+  },
+  {
+    "id": 1020,
+    "value": "Paladins"
+  },
+  {
+    "id": 1021,
+    "value": "Pro Evolution Soccer"
+  },
+  {
+    "id": 1022,
+    "value": "PUBG"
+  },
+  {
+    "id": 1023,
+    "value": "Quake"
+  },
+  {
+    "id": 1024,
+    "value": "Rainbow Six"
+  },
+  {
+    "id": 1025,
+    "value": "Rocket League"
+  },
+  {
+    "id": 1026,
+    "value": "Smite"
+  },
+  {
+    "id": 1027,
+    "value": "StarCraft 2"
+  },
+  {
+    "id": 1028,
+    "value": "StarCraft: Brood War"
+  },
+  {
+    "id": 1029,
+    "value": "Street Fighter"
+  },
+  {
+    "id": 1030,
+    "value": "Super Smash Bros"
+  },
+  {
+    "id": 1031,
+    "value": "Team Fortress 2"
+  },
+  {
+    "id": 1032,
+    "value": "Tekken"
+  },
+  {
+    "id": 1033,
+    "value": "Vainglory"
+  },
+  {
+    "id": 1034,
+    "value": "Warcraft 3"
+  },
+  {
+    "id": 1035,
+    "value": "Warhammer 2"
+  },
+  {
+    "id": 1036,
+    "value": "World of Tanks"
+  },
+  {
+    "id": 1037,
+    "value": "World of Warcraft"
+  },
+  {
+    "id": 1038,
+    "value": "Dota Auto Chess"
+  },
+  {
+    "id": 1039,
+    "value": "Apex Legends"
+  },
+  {
+    "id": 1040,
+    "value": "Auto Chess"
+  },
+  {
+    "id": 1041,
+    "value": "Dota Underlords"
+  },
+  {
+    "id": 1042,
+    "value": "CrossFire"
+  },
+  {
+    "id": 1043,
+    "value": "Ragnarok"
+  },
+  {
+    "id": 1044,
+    "value": "F1 Esports"
+  },
+  {
+    "id": 1045,
+    "value": "Valorant"
+  },
+  {
+    "id": 1046,
+    "value": "Free Fire"
+  },
+  {
+    "id": 1047,
+    "value": "Brawlhalla"
+  },
+  {
+    "id": 1048,
+    "value": "Brawl Stars"
+  },
+  {
+    "id": 1049,
+    "value": "Call of Duty Mobile"
+  },
+  {
+    "id": 1050,
+    "value": "Diabotical"
+  },
+  {
+    "id": 1051,
+    "value": "Legends of Runeterra"
+  },
+  {
+    "id": 1052,
+    "value": "Mobile Legends: Bang Bang"
+  },
+  {
+    "id": 1053,
+    "value": "PUBG Mobile"
+  },
+  {
+    "id": 1054,
+    "value": "Shadowverse"
+  },
+  {
+    "id": 1055,
+    "value": "Teamfight Tactics"
+  },
+  {
+    "id": 1056,
+    "value": "Wild Rift"
+  },
+  {
+    "id": 1057,
+    "value": "DCL The Game"
+  },
+  {
+    "id": 1058,
+    "value": "Overwatch 2"
+  }
+]
