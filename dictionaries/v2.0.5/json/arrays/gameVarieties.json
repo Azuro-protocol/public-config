@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "value": "Main game"
+  },
+  {
+    "id": 2,
+    "value": "Extra-end"
+  },
+  {
+    "id": 4,
+    "value": "extra innings"
+  },
+  {
+    "id": 12,
+    "value": "Overtime"
+  },
+  {
+    "id": 15,
+    "value": "Overtime and bullits"
+  },
+  {
+    "id": 17,
+    "value": "Extra time"
+  },
+  {
+    "id": 19,
+    "value": "Penalty shootout"
+  },
+  {
+    "id": 20,
+    "value": "Tie-break"
+  },
+  {
+    "id": 21,
+    "value": "Addional time"
+  },
+  {
+    "id": 22,
+    "value": "Champ. tie-break"
+  },
+  {
+    "id": 23,
+    "value": "Up to 21 points"
+  },
+  {
+    "id": 24,
+    "value": "Who is taller"
+  },
+  {
+    "id": 25,
+    "value": "All sets up to 15 points"
+  },
+  {
+    "id": 26,
+    "value": "7 innings"
+  },
+  {
+    "id": 27,
+    "value": "Overtime"
+  },
+  {
+    "id": 783,
+    "value": "Super tie-break"
+  }
+]
