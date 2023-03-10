@@ -1,0 +1,410 @@
+[
+  {
+    "id": 1,
+    "value": "Goal"
+  },
+  {
+    "id": 2,
+    "value": "Corners"
+  },
+  {
+    "id": 3,
+    "value": "Double"
+  },
+  {
+    "id": 4,
+    "value": "Aces"
+  },
+  {
+    "id": 5,
+    "value": "Ace"
+  },
+  {
+    "id": 6,
+    "value": "Removal"
+  },
+  {
+    "id": 7,
+    "value": "Penalty time"
+  },
+  {
+    "id": 8,
+    "value": "Yellow cards"
+  },
+  {
+    "id": 9,
+    "value": "Assist"
+  },
+  {
+    "id": 10,
+    "value": "Cards"
+  },
+  {
+    "id": 11,
+    "value": "Misses"
+  },
+  {
+    "id": 12,
+    "value": "Shots on target"
+  },
+  {
+    "id": 13,
+    "value": "Offside"
+  },
+  {
+    "id": 14,
+    "value": "Fouls"
+  },
+  {
+    "id": 15,
+    "value": "Shots on goal"
+  },
+  {
+    "id": 16,
+    "value": "Additional rates"
+  },
+  {
+    "id": 17,
+    "value": "Game series"
+  },
+  {
+    "id": 18,
+    "value": "Free throws scored"
+  },
+  {
+    "id": 19,
+    "value": "Scored two-point shots"
+  },
+  {
+    "id": 20,
+    "value": "Scored three-point shots"
+  },
+  {
+    "id": 21,
+    "value": "Rebounds"
+  },
+  {
+    "id": 22,
+    "value": "Assists"
+  },
+  {
+    "id": 23,
+    "value": "Turnovers"
+  },
+  {
+    "id": 24,
+    "value": "Blocks"
+  },
+  {
+    "id": 25,
+    "value": "Baron"
+  },
+  {
+    "id": 26,
+    "value": "Double errors"
+  },
+  {
+    "id": 27,
+    "value": "Posts and Crossbars"
+  },
+  {
+    "id": 28,
+    "value": "Breaks"
+  },
+  {
+    "id": 29,
+    "value": "Ball ownership percentage"
+  },
+  {
+    "id": 30,
+    "value": "Replacements"
+  },
+  {
+    "id": 31,
+    "value": "1 game"
+  },
+  {
+    "id": 32,
+    "value": "2 game"
+  },
+  {
+    "id": 33,
+    "value": "Shootouts"
+  },
+  {
+    "id": 34,
+    "value": "Hits"
+  },
+  {
+    "id": 35,
+    "value": "Intercepts"
+  },
+  {
+    "id": 36,
+    "value": "Defensive rebound"
+  },
+  {
+    "id": 37,
+    "value": "Offensive rebound"
+  },
+  {
+    "id": 38,
+    "value": "Extra bullets"
+  },
+  {
+    "id": 39,
+    "value": "Best by sets"
+  },
+  {
+    "id": 40,
+    "value": "Alternative outcomes"
+  },
+  {
+    "id": 41,
+    "value": "Express outcomes"
+  },
+  {
+    "id": 42,
+    "value": "Cards. statistics"
+  },
+  {
+    "id": 43,
+    "value": "Barrack"
+  },
+  {
+    "id": 44,
+    "value": "Base"
+  },
+  {
+    "id": 45,
+    "value": "Block"
+  },
+  {
+    "id": 46,
+    "value": "Corner"
+  },
+  {
+    "id": 47,
+    "value": "Double Double"
+  },
+  {
+    "id": 48,
+    "value": "Dragon"
+  },
+  {
+    "id": 49,
+    "value": "Duration Minute"
+  },
+  {
+    "id": 50,
+    "value": "FieldGoal"
+  },
+  {
+    "id": 51,
+    "value": "Fight"
+  },
+  {
+    "id": 52,
+    "value": "First Blood"
+  },
+  {
+    "id": 53,
+    "value": "Frame"
+  },
+  {
+    "id": 54,
+    "value": "Game"
+  },
+  {
+    "id": 55,
+    "value": "Hit"
+  },
+  {
+    "id": 56,
+    "value": "Home Run"
+  },
+  {
+    "id": 57,
+    "value": "Inhibitor"
+  },
+  {
+    "id": 58,
+    "value": "Interception"
+  },
+  {
+    "id": 59,
+    "value": "Kick Point"
+  },
+  {
+    "id": 60,
+    "value": "Kill"
+  },
+  {
+    "id": 61,
+    "value": "KillDouble"
+  },
+  {
+    "id": 62,
+    "value": "KillPenta"
+  },
+  {
+    "id": 63,
+    "value": "KillQuadra"
+  },
+  {
+    "id": 64,
+    "value": "KillTriple"
+  },
+  {
+    "id": 65,
+    "value": "Knife Kill"
+  },
+  {
+    "id": 66,
+    "value": "Leg"
+  },
+  {
+    "id": 67,
+    "value": "Longest Pass Completion Yards"
+  },
+  {
+    "id": 68,
+    "value": "Longest Reception Yards"
+  },
+  {
+    "id": 69,
+    "value": "Map"
+  },
+  {
+    "id": 70,
+    "value": "Multiple"
+  },
+  {
+    "id": 71,
+    "value": "Overtime"
+  },
+  {
+    "id": 72,
+    "value": "Pass Attempt"
+  },
+  {
+    "id": 73,
+    "value": "Pass Completion"
+  },
+  {
+    "id": 74,
+    "value": "Passing Yard"
+  },
+  {
+    "id": 75,
+    "value": "Pitching Out"
+  },
+  {
+    "id": 76,
+    "value": "Point"
+  },
+  {
+    "id": 77,
+    "value": "Point Rebound Assist"
+  },
+  {
+    "id": 78,
+    "value": "Rebound"
+  },
+  {
+    "id": 79,
+    "value": "Receiving Yard"
+  },
+  {
+    "id": 80,
+    "value": "Reception"
+  },
+  {
+    "id": 81,
+    "value": "Roshan"
+  },
+  {
+    "id": 82,
+    "value": "Round"
+  },
+  {
+    "id": 83,
+    "value": "Run"
+  },
+  {
+    "id": 84,
+    "value": "Rushing Touchdown"
+  },
+  {
+    "id": 85,
+    "value": "Rushing Yard"
+  },
+  {
+    "id": 86,
+    "value": "Save"
+  },
+  {
+    "id": 87,
+    "value": "Set"
+  },
+  {
+    "id": 88,
+    "value": "Shot On Goal"
+  },
+  {
+    "id": 89,
+    "value": "Steal Block"
+  },
+  {
+    "id": 90,
+    "value": "Strikeout"
+  },
+  {
+    "id": 91,
+    "value": "Three-point Field Goal"
+  },
+  {
+    "id": 92,
+    "value": "Touchdown"
+  },
+  {
+    "id": 93,
+    "value": "Touchdown Pass"
+  },
+  {
+    "id": 94,
+    "value": "Touchdown Reception"
+  },
+  {
+    "id": 95,
+    "value": "Tower"
+  },
+  {
+    "id": 96,
+    "value": "Triple Double"
+  },
+  {
+    "id": 97,
+    "value": "Turnover"
+  },
+  {
+    "id": 98,
+    "value": "Turret"
+  },
+  {
+    "id": 99,
+    "value": "Win"
+  },
+  {
+    "id": 10000,
+    "value": "Maps"
+  },
+  {
+    "id": 10001,
+    "value": "Rounds"
+  },
+  {
+    "id": 10002,
+    "value": "Frags"
+  }
+]
