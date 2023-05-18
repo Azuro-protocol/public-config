@@ -980,9 +980,14 @@
         "internalType": "bytes",
         "name": "data",
         "type": "bytes"
+      },
+      {
+        "internalType": "address",
+        "name": "affiliate",
+        "type": "address"
       }
     ],
-    "name": "claimAffiliateReward",
+    "name": "claimAffiliateRewardFor",
     "outputs": [
       {
         "internalType": "uint256",
