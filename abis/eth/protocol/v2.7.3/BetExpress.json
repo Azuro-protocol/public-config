@@ -33,11 +33,6 @@
   },
   {
     "inputs": [],
-    "name": "IncorrectMaxReinforcementShare",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "LargeFundsRatio",
     "type": "error"
   },
@@ -160,19 +155,6 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "newMaxReinforcementShare",
-        "type": "uint64"
-      }
-    ],
-    "name": "MaxReinforcementShareChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "uint256",
         "name": "betId",
@@ -254,6 +236,19 @@
       }
     ],
     "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "newReinforcement",
+        "type": "uint128"
+      }
+    ],
+    "name": "ReinforcementChanged",
     "type": "event"
   },
   {
@@ -413,12 +408,12 @@
   {
     "inputs": [
       {
-        "internalType": "uint64",
-        "name": "maxReinforcementShare_",
-        "type": "uint64"
+        "internalType": "uint128",
+        "name": "reinforcement_",
+        "type": "uint128"
       }
     ],
-    "name": "changeMaxReinforcementShare",
+    "name": "changeReinforcement",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -592,13 +587,19 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "lp",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "lockedReserves",
     "outputs": [
       {
-        "internalType": "contract ILP",
+        "internalType": "uint256",
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -606,12 +607,12 @@
   },
   {
     "inputs": [],
-    "name": "maxReinforcementShare",
+    "name": "lp",
     "outputs": [
       {
-        "internalType": "uint64",
+        "internalType": "contract ILP",
         "name": "",
-        "type": "uint64"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -704,19 +705,13 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "reinforcements",
+    "inputs": [],
+    "name": "reinforcement",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "uint128",
         "name": "",
-        "type": "uint256"
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",
