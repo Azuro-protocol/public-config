@@ -33,11 +33,6 @@
   },
   {
     "inputs": [],
-    "name": "IncorrectMargin",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "IncorrectMaxReinforcementShare",
     "type": "error"
   },
@@ -69,6 +64,11 @@
   },
   {
     "inputs": [],
+    "name": "SmallOdds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "TooFewSubbets",
     "type": "error"
   },
@@ -81,11 +81,6 @@
       }
     ],
     "name": "TooLargeReinforcement",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "TooSmallOdds",
     "type": "error"
   },
   {
@@ -159,6 +154,19 @@
       }
     ],
     "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newMaxReinforcementShare",
+        "type": "uint64"
+      }
+    ],
+    "name": "MaxReinforcementShareChanged",
     "type": "event"
   },
   {
@@ -246,25 +254,6 @@
       }
     ],
     "name": "OwnershipTransferred",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "margin",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "maxReinforcementShare",
-        "type": "uint64"
-      }
-    ],
-    "name": "ParamsUpdated",
     "type": "event"
   },
   {
@@ -364,6 +353,47 @@
   {
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "outcomeId",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IBetExpress.SubBet[]",
+        "name": "subBets",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
+    "name": "calcOdds",
+    "outputs": [
+      {
+        "internalType": "uint64[]",
+        "name": "conditionOdds",
+        "type": "uint64[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expressOdds",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -378,6 +408,19 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "maxReinforcementShare_",
+        "type": "uint64"
+      }
+    ],
+    "name": "changeMaxReinforcementShare",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -556,19 +599,6 @@
         "internalType": "contract ILP",
         "name": "",
         "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "margin",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
       }
     ],
     "stateMutability": "view",
@@ -818,24 +848,6 @@
       }
     ],
     "name": "setBaseURI",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint128",
-        "name": "margin_",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "maxReinforcementShare_",
-        "type": "uint64"
-      }
-    ],
-    "name": "setParams",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
