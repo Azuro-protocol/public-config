@@ -156,6 +156,12 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "address",
+        "name": "bettor",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "internalType": "uint256",
         "name": "betId",
         "type": "uint256"
