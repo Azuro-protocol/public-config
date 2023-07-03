@@ -490,12 +490,6 @@
       },
       {
         "indexed": false,
-        "internalType": "bytes32",
-        "name": "ipfsHash",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
         "internalType": "uint64",
         "name": "startsAt",
         "type": "uint64"
@@ -1039,11 +1033,6 @@
         "internalType": "uint256",
         "name": "gameId",
         "type": "uint256"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "ipfsHash",
-        "type": "bytes32"
       },
       {
         "internalType": "uint64",
