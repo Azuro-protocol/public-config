@@ -220,12 +220,12 @@
         "components": [
           {
             "internalType": "uint256",
-            "name": "id",
+            "name": "gameId",
             "type": "uint256"
           },
           {
             "internalType": "uint256",
-            "name": "gameId",
+            "name": "conditionId",
             "type": "uint256"
           },
           {
@@ -252,14 +252,9 @@
             "internalType": "uint8",
             "name": "winningOutcomesCount",
             "type": "uint8"
-          },
-          {
-            "internalType": "bytes[]",
-            "name": "data",
-            "type": "bytes[]"
           }
         ],
-        "internalType": "struct ICoreBase.ConditionData[]",
+        "internalType": "struct IProxyOracle.CreateConditionData[]",
         "name": "data",
         "type": "tuple[]"
       }
@@ -282,6 +277,11 @@
             "internalType": "uint64",
             "name": "startsAt",
             "type": "uint64"
+          },
+          {
+            "internalType": "bytes[]",
+            "name": "data",
+            "type": "bytes[]"
           }
         ],
         "internalType": "struct IProxyOracle.CreateGameData[]",

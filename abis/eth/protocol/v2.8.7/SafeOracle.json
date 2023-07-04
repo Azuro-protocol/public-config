@@ -488,51 +488,39 @@
         "type": "address"
       },
       {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "id",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "gameId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "odds",
-            "type": "uint256[]"
-          },
-          {
-            "internalType": "uint64[]",
-            "name": "outcomes",
-            "type": "uint64[]"
-          },
-          {
-            "internalType": "uint128",
-            "name": "reinforcement",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint64",
-            "name": "margin",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint8",
-            "name": "winningOutcomesCount",
-            "type": "uint8"
-          },
-          {
-            "internalType": "bytes[]",
-            "name": "data",
-            "type": "bytes[]"
-          }
-        ],
-        "internalType": "struct ICoreBase.ConditionData",
-        "name": "conditionData",
-        "type": "tuple"
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "odds",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "outcomes",
+        "type": "uint64[]"
+      },
+      {
+        "internalType": "uint128",
+        "name": "reinforcement",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "margin",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint8",
+        "name": "winningOutcomesCount",
+        "type": "uint8"
       },
       {
         "internalType": "uint64",

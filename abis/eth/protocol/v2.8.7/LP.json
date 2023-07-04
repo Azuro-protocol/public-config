@@ -493,6 +493,12 @@
         "internalType": "uint64",
         "name": "startsAt",
         "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes[]",
+        "name": "data",
+        "type": "bytes[]"
       }
     ],
     "name": "NewGame",
@@ -1038,6 +1044,11 @@
         "internalType": "uint64",
         "name": "startsAt",
         "type": "uint64"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "data",
+        "type": "bytes[]"
       }
     ],
     "name": "createGame",
