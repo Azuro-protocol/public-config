@@ -21,6 +21,11 @@
         "internalType": "address",
         "name": "lp",
         "type": "address"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "data",
+        "type": "bytes[]"
       }
     ],
     "name": "addLiquidityNative",
