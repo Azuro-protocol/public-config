@@ -496,9 +496,9 @@
       },
       {
         "indexed": false,
-        "internalType": "bytes[]",
+        "internalType": "bytes",
         "name": "data",
-        "type": "bytes[]"
+        "type": "bytes"
       }
     ],
     "name": "NewGame",
@@ -627,9 +627,9 @@
         "type": "uint128"
       },
       {
-        "internalType": "bytes[]",
+        "internalType": "bytes",
         "name": "data",
-        "type": "bytes[]"
+        "type": "bytes"
       }
     ],
     "name": "addLiquidity",
@@ -1051,9 +1051,9 @@
         "type": "uint64"
       },
       {
-        "internalType": "bytes[]",
+        "internalType": "bytes",
         "name": "data",
-        "type": "bytes[]"
+        "type": "bytes"
       }
     ],
     "name": "createGame",

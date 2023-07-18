@@ -279,9 +279,9 @@
             "type": "uint64"
           },
           {
-            "internalType": "bytes[]",
+            "internalType": "bytes",
             "name": "data",
-            "type": "bytes[]"
+            "type": "bytes"
           }
         ],
         "internalType": "struct IProxyOracle.CreateGameData[]",
