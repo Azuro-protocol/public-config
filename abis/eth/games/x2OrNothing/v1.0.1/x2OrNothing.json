@@ -27,6 +27,11 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectConsumerId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectMargin",
     "type": "error"
   },
@@ -42,7 +47,17 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectRequestConfirmations",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectResultPeriod",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectVrf",
     "type": "error"
   },
   {
@@ -80,13 +95,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "player",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
         "name": "requestId",
         "type": "uint256"
@@ -149,7 +164,7 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "user",
         "type": "address"
@@ -194,13 +209,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "player",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
         "name": "requestId",
         "type": "uint256"
@@ -210,6 +225,12 @@
         "internalType": "uint128",
         "name": "amount",
         "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IX2OrNothing.BetType",
+        "name": "betType",
+        "type": "uint8"
       }
     ],
     "name": "NewBet",
@@ -259,6 +280,63 @@
     ],
     "name": "ResultPeriodChanged",
     "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newVrf",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newCondumerId",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "newRequestConfirmations",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "newKeyHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "VrfChanged",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "MAXREQUESTCONFIRMATIONS",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MINREQUESTCONFIRMATIONS",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [
@@ -362,6 +440,34 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "newVrf",
+        "type": "address"
+      },
+      {
+        "internalType": "uint64",
+        "name": "newConsumerId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint16",
+        "name": "newRequestConfirmations",
+        "type": "uint16"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "newKeyHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "changeVrf",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "account",
         "type": "address"
       }
@@ -402,7 +508,7 @@
     "name": "core",
     "outputs": [
       {
-        "internalType": "contract IPrematchCoreExtended",
+        "internalType": "contract IPrematchCore",
         "name": "",
         "type": "address"
       }
@@ -556,7 +662,7 @@
     "name": "lp",
     "outputs": [
       {
-        "internalType": "contract ILPExtended",
+        "internalType": "contract ILP",
         "name": "",
         "type": "address"
       }
