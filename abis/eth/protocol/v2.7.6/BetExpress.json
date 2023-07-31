@@ -1,6 +1,11 @@
 [
   {
     "inputs": [],
+    "name": "ActionIsForbidden",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "AlreadyPaid",
     "type": "error"
   },
