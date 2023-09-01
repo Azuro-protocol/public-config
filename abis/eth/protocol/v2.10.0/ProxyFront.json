@@ -128,9 +128,9 @@
             "type": "uint256"
           },
           {
-            "internalType": "enum IProxyFront.WithdrawalType",
-            "name": "withdrawalType",
-            "type": "uint8"
+            "internalType": "bool",
+            "name": "isNative",
+            "type": "bool"
           }
         ],
         "internalType": "struct IProxyFront.WithdrawPayoutData[]",
