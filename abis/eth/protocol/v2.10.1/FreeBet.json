@@ -6,12 +6,17 @@
   },
   {
     "inputs": [],
-    "name": "IncorrectReleaseData",
+    "name": "BetAlreadyClaimed",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "InsufficientAmount",
+    "name": "BetExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectChainId",
     "type": "error"
   },
   {
@@ -21,7 +26,17 @@
   },
   {
     "inputs": [],
+    "name": "InvalidSignature",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "OnlyBetOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OnlyFreeBetOwner",
     "type": "error"
   },
   {
@@ -31,22 +46,7 @@
   },
   {
     "inputs": [],
-    "name": "ReleaseAlreadyExists",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "ReleaseExpired",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "SmallOdds",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "ZeroAmount",
+    "name": "SmallMinOdds",
     "type": "error"
   },
   {
@@ -97,43 +97,6 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "releaseId",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "bettor",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "azuroBetId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      }
-    ],
-    "name": "FreeBetRedeemed",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": false,
         "internalType": "uint8",
         "name": "version",
@@ -174,6 +137,43 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "uint256",
+        "name": "freeBetId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "bettor",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "azuroBetId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
+    "name": "NewBet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
         "type": "address"
@@ -199,43 +199,6 @@
       }
     ],
     "name": "PayoutsResolved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "releaseId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "bytes32",
-        "name": "merkleRoot",
-        "type": "bytes32"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "minOdds",
-        "type": "uint64"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "expiresAt",
-        "type": "uint64"
-      }
-    ],
-    "name": "Released",
     "type": "event"
   },
   {
@@ -293,6 +256,87 @@
   {
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "chainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "freeBetId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint64",
+            "name": "minOdds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "expiresAt",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IFreeBet.FreeBetData",
+        "name": "freeBetData",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "signature",
+        "type": "bytes"
+      },
+      {
+        "internalType": "address",
+        "name": "core",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "outcomeId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "deadline",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "minOdds",
+        "type": "uint64"
+      }
+    ],
+    "name": "bet",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "account",
         "type": "address"
@@ -300,6 +344,25 @@
     ],
     "name": "checkOwner",
     "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "claimedFreeBets",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -373,146 +436,6 @@
         "internalType": "address",
         "name": "",
         "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "releaseId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes32[]",
-        "name": "merkleProof",
-        "type": "bytes32[]"
-      },
-      {
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "outcomeId",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "deadline",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "minOdds",
-        "type": "uint64"
-      }
-    ],
-    "name": "redeem",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "name": "redeemedAmounts",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "releaseId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "merkleRoot",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "minOdds",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "expiresAt",
-        "type": "uint64"
-      }
-    ],
-    "name": "release",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "releases",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "merkleRoot",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "minOdds",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "expiresAt",
-        "type": "uint64"
       }
     ],
     "stateMutability": "view",
