@@ -31,6 +31,11 @@
   },
   {
     "inputs": [],
+    "name": "WrongRuleHash",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "WrongToken",
     "type": "error"
   },
@@ -70,6 +75,25 @@
       }
     ],
     "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "ruleHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "rule",
+        "type": "bytes"
+      }
+    ],
+    "name": "NewRule",
     "type": "event"
   },
   {
@@ -265,6 +289,32 @@
   {
     "inputs": [],
     "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "ruleHash",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "rule",
+        "type": "bytes"
+      }
+    ],
+    "name": "setRule",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
