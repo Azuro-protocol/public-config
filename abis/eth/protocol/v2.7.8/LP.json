@@ -1859,15 +1859,16 @@
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
-      },
-      {
-        "internalType": "bool",
-        "name": "isNative",
-        "type": "bool"
       }
     ],
     "name": "withdrawPayout",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
