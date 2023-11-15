@@ -26,6 +26,11 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectFreeBetContractAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InsufficientContractBalance",
     "type": "error"
   },
@@ -221,6 +226,11 @@
             "internalType": "uint256",
             "name": "chainId",
             "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "freeBetContract",
+            "type": "address"
           },
           {
             "internalType": "uint256",

@@ -178,22 +178,77 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "gameId",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint128[]",
+            "name": "payouts",
+            "type": "uint128[]"
+          },
+          {
+            "internalType": "uint128[]",
+            "name": "virtualFunds",
+            "type": "uint128[]"
+          },
+          {
+            "internalType": "uint128",
+            "name": "totalNetBets",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "reinforcement",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "fund",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint64",
+            "name": "margin",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "endsAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint48",
+            "name": "lastDepositId",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint8",
+            "name": "winningOutcomesCount",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum IConditionState.ConditionState",
+            "name": "state",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "oracle",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isExpressForbidden",
+            "type": "bool"
+          }
+        ],
         "indexed": false,
-        "internalType": "uint64[]",
-        "name": "outcomes",
-        "type": "uint64[]"
+        "internalType": "struct ICondition.Condition",
+        "name": "condition",
+        "type": "tuple"
       }
     ],
     "name": "ConditionCreated",
@@ -347,9 +402,9 @@
       },
       {
         "indexed": false,
-        "internalType": "uint256[]",
-        "name": "newOdds",
-        "type": "uint256[]"
+        "internalType": "uint128[]",
+        "name": "newVirtualFunds",
+        "type": "uint128[]"
       }
     ],
     "name": "OddsChanged",
