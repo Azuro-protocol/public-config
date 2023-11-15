@@ -115,19 +115,6 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newLp",
-        "type": "address"
-      }
-    ],
-    "name": "LpChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": false,
         "internalType": "address",
         "name": "newManager",
@@ -466,19 +453,6 @@
       }
     ],
     "name": "setAffiliate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "lp_",
-        "type": "address"
-      }
-    ],
-    "name": "setLp",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

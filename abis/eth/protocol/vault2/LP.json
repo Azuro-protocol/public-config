@@ -72,6 +72,11 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectPayee",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectReinforcementAbility",
     "type": "error"
   },
