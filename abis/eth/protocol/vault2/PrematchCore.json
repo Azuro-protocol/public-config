@@ -97,11 +97,6 @@
   },
   {
     "inputs": [],
-    "name": "NoPendingReward",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "NothingChanged",
     "type": "error"
   },
@@ -151,17 +146,6 @@
   {
     "inputs": [],
     "name": "SmallOdds",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "pendingRewardsCount",
-        "type": "uint256"
-      }
-    ],
-    "name": "StartOutOfRange",
     "type": "error"
   },
   {
