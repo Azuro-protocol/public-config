@@ -111,14 +111,19 @@
             "internalType": "uint64",
             "name": "margin",
             "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "reinforcement",
+            "type": "uint128"
           }
         ],
-        "internalType": "struct IProxyOracle.changeMarginData[]",
+        "internalType": "struct IProxyOracle.changeConditionSettingsData[]",
         "name": "data",
         "type": "tuple[]"
       }
     ],
-    "name": "changeMargins",
+    "name": "changeConditionSettings",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -162,36 +167,6 @@
       }
     ],
     "name": "changeReinforcementLimit",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
-      },
-      {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "conditionId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint128",
-            "name": "reinforcement",
-            "type": "uint128"
-          }
-        ],
-        "internalType": "struct IProxyOracle.changeReinforcementData[]",
-        "name": "data",
-        "type": "tuple[]"
-      }
-    ],
-    "name": "changeReinforcements",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

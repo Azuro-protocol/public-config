@@ -280,6 +280,31 @@
       },
       {
         "indexed": false,
+        "internalType": "uint128",
+        "name": "newMargin",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "newReinforcement",
+        "type": "uint128"
+      }
+    ],
+    "name": "ConditionSettingsChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
         "internalType": "bool",
         "name": "flag",
         "type": "bool"
@@ -299,25 +324,6 @@
       }
     ],
     "name": "Initialized",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint64",
-        "name": "newMargin",
-        "type": "uint64"
-      }
-    ],
-    "name": "MarginChanged",
     "type": "event"
   },
   {
@@ -386,9 +392,9 @@
       },
       {
         "indexed": false,
-        "internalType": "uint128[]",
-        "name": "newVirtualFunds",
-        "type": "uint128[]"
+        "internalType": "uint256[]",
+        "name": "newOdds",
+        "type": "uint256[]"
       }
     ],
     "name": "OddsChanged",
@@ -411,25 +417,6 @@
       }
     ],
     "name": "OwnershipTransferred",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "newReinforcement",
-        "type": "uint128"
-      }
-    ],
-    "name": "ReinforcementChanged",
     "type": "event"
   },
   {
@@ -555,9 +542,14 @@
         "internalType": "uint64",
         "name": "newMargin",
         "type": "uint64"
+      },
+      {
+        "internalType": "uint128",
+        "name": "newReinforcement",
+        "type": "uint128"
       }
     ],
-    "name": "changeMargin",
+    "name": "changeConditionSettings",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -576,24 +568,6 @@
       }
     ],
     "name": "changeOdds",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint128",
-        "name": "newReinforcement",
-        "type": "uint128"
-      }
-    ],
-    "name": "changeReinforcement",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
