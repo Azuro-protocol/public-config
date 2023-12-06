@@ -97,6 +97,11 @@
   },
   {
     "inputs": [],
+    "name": "NoPendingReward",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "NothingChanged",
     "type": "error"
   },
@@ -149,6 +154,17 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "pendingRewardsCount",
+        "type": "uint256"
+      }
+    ],
+    "name": "StartOutOfRange",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "WrongOutcome",
     "type": "error"
@@ -162,77 +178,22 @@
     "anonymous": false,
     "inputs": [
       {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "gameId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint128[]",
-            "name": "payouts",
-            "type": "uint128[]"
-          },
-          {
-            "internalType": "uint128[]",
-            "name": "virtualFunds",
-            "type": "uint128[]"
-          },
-          {
-            "internalType": "uint128",
-            "name": "totalNetBets",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "reinforcement",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "fund",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint64",
-            "name": "margin",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint64",
-            "name": "endsAt",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint48",
-            "name": "lastDepositId",
-            "type": "uint48"
-          },
-          {
-            "internalType": "uint8",
-            "name": "winningOutcomesCount",
-            "type": "uint8"
-          },
-          {
-            "internalType": "enum IConditionState.ConditionState",
-            "name": "state",
-            "type": "uint8"
-          },
-          {
-            "internalType": "address",
-            "name": "oracle",
-            "type": "address"
-          },
-          {
-            "internalType": "bool",
-            "name": "isExpressForbidden",
-            "type": "bool"
-          }
-        ],
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
         "indexed": false,
-        "internalType": "struct ICondition.Condition",
-        "name": "condition",
-        "type": "tuple"
+        "internalType": "uint64[]",
+        "name": "outcomes",
+        "type": "uint64[]"
       }
     ],
     "name": "ConditionCreated",
@@ -280,31 +241,6 @@
       },
       {
         "indexed": false,
-        "internalType": "uint128",
-        "name": "newMargin",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "newReinforcement",
-        "type": "uint128"
-      }
-    ],
-    "name": "ConditionSettingsChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
         "internalType": "bool",
         "name": "flag",
         "type": "bool"
@@ -324,6 +260,25 @@
       }
     ],
     "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "newMargin",
+        "type": "uint64"
+      }
+    ],
+    "name": "MarginChanged",
     "type": "event"
   },
   {
@@ -417,6 +372,25 @@
       }
     ],
     "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "newReinforcement",
+        "type": "uint128"
+      }
+    ],
+    "name": "ReinforcementChanged",
     "type": "event"
   },
   {
@@ -542,14 +516,9 @@
         "internalType": "uint64",
         "name": "newMargin",
         "type": "uint64"
-      },
-      {
-        "internalType": "uint128",
-        "name": "newReinforcement",
-        "type": "uint128"
       }
     ],
-    "name": "changeConditionSettings",
+    "name": "changeMargin",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -568,6 +537,24 @@
       }
     ],
     "name": "changeOdds",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "newReinforcement",
+        "type": "uint128"
+      }
+    ],
+    "name": "changeReinforcement",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -636,7 +623,7 @@
         "type": "uint8"
       },
       {
-        "internalType": "enum IConditionState.ConditionState",
+        "internalType": "enum ICondition.ConditionState",
         "name": "state",
         "type": "uint8"
       },
@@ -765,7 +752,7 @@
             "type": "uint8"
           },
           {
-            "internalType": "enum IConditionState.ConditionState",
+            "internalType": "enum ICondition.ConditionState",
             "name": "state",
             "type": "uint8"
           },
@@ -783,6 +770,30 @@
         "internalType": "struct ICondition.Condition",
         "name": "",
         "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getConditionSettings",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
       }
     ],
     "stateMutability": "view",
