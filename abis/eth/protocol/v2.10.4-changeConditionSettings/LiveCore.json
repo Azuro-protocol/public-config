@@ -1,6 +1,11 @@
 [
   {
     "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
     "name": "AlreadyPaid",
     "type": "error"
   },
@@ -11,22 +16,7 @@
   },
   {
     "inputs": [],
-    "name": "CantChangeFlag",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "ConditionAlreadyCreated",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "ConditionAlreadyResolved",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "ConditionNotExists",
     "type": "error"
   },
   {
@@ -40,29 +30,13 @@
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint64",
-        "name": "outcome",
-        "type": "uint64"
-      }
-    ],
-    "name": "DuplicateOutcomes",
+    "inputs": [],
+    "name": "IncorrectAmount",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "GameAlreadyStarted",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "IncorrectConditionId",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "IncorrectMargin",
+    "name": "IncorrectCore",
     "type": "error"
   },
   {
@@ -72,17 +46,7 @@
   },
   {
     "inputs": [],
-    "name": "IncorrectOutcomesCount",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "IncorrectReinforcement",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "IncorrectTimestamp",
+    "name": "IncorrectSettleDate",
     "type": "error"
   },
   {
@@ -92,12 +56,22 @@
   },
   {
     "inputs": [],
-    "name": "InsufficientFund",
+    "name": "InvalidBettorSignature",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "NothingChanged",
+    "name": "InvalidChainId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidNonce",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidOracleSignature",
     "type": "error"
   },
   {
@@ -118,18 +92,7 @@
   },
   {
     "inputs": [],
-    "name": "OutcomesAndOddsCountDiffer",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint64",
-        "name": "waitTime",
-        "type": "uint64"
-      }
-    ],
-    "name": "ResolveTooEarly",
+    "name": "PayoutLimit",
     "type": "error"
   },
   {
@@ -145,6 +108,11 @@
   },
   {
     "inputs": [],
+    "name": "SignatureExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "SmallOdds",
     "type": "error"
   },
@@ -154,85 +122,37 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "ZeroOdds",
-    "type": "error"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "gameId",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint128[]",
-            "name": "payouts",
-            "type": "uint128[]"
-          },
-          {
-            "internalType": "uint128[]",
-            "name": "virtualFunds",
-            "type": "uint128[]"
-          },
-          {
-            "internalType": "uint128",
-            "name": "totalNetBets",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "reinforcement",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "fund",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint64",
-            "name": "margin",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint64",
-            "name": "endsAt",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint48",
-            "name": "lastDepositId",
-            "type": "uint48"
-          },
-          {
-            "internalType": "uint8",
-            "name": "winningOutcomesCount",
-            "type": "uint8"
-          },
-          {
-            "internalType": "enum IConditionState.ConditionState",
-            "name": "state",
-            "type": "uint8"
-          },
-          {
-            "internalType": "address",
-            "name": "oracle",
-            "type": "address"
-          },
-          {
-            "internalType": "bool",
-            "name": "isExpressForbidden",
-            "type": "bool"
-          }
-        ],
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
         "indexed": false,
-        "internalType": "struct ICondition.Condition",
-        "name": "condition",
-        "type": "tuple"
+        "internalType": "uint64[]",
+        "name": "outcomes",
+        "type": "uint64[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[]",
+        "name": "odds",
+        "type": "uint256[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "winningOutcomesCount",
+        "type": "uint8"
       }
     ],
     "name": "ConditionCreated",
@@ -264,53 +184,15 @@
         "internalType": "int128",
         "name": "lpProfit",
         "type": "int128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "settledAt",
+        "type": "uint64"
       }
     ],
     "name": "ConditionResolved",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "newMargin",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "newReinforcement",
-        "type": "uint128"
-      }
-    ],
-    "name": "ConditionSettingsChanged",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "flag",
-        "type": "bool"
-      }
-    ],
-    "name": "ConditionStopped",
     "type": "event"
   },
   {
@@ -367,37 +249,18 @@
       },
       {
         "indexed": false,
-        "internalType": "uint256",
+        "internalType": "uint64",
         "name": "odds",
-        "type": "uint256"
+        "type": "uint64"
       },
       {
         "indexed": false,
-        "internalType": "uint128[]",
-        "name": "funds",
-        "type": "uint128[]"
+        "internalType": "uint128",
+        "name": "payoutLimit",
+        "type": "uint128"
       }
     ],
-    "name": "NewBet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256[]",
-        "name": "newOdds",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "OddsChanged",
+    "name": "NewLiveBet",
     "type": "event"
   },
   {
@@ -492,82 +355,12 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "outcome",
-        "type": "uint64"
-      }
-    ],
-    "name": "calcOdds",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "odds",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      }
-    ],
-    "name": "cancelCondition",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint64",
-        "name": "newMargin",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint128",
-        "name": "newReinforcement",
-        "type": "uint128"
-      }
-    ],
-    "name": "changeConditionSettings",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
         "internalType": "uint256[]",
-        "name": "newOdds",
+        "name": "conditionIds",
         "type": "uint256[]"
       }
     ],
-    "name": "changeOdds",
+    "name": "cancelConditions",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -596,33 +389,13 @@
     "name": "conditions",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "gameId",
-        "type": "uint256"
-      },
-      {
         "internalType": "uint128",
         "name": "totalNetBets",
         "type": "uint128"
       },
       {
-        "internalType": "uint128",
-        "name": "reinforcement",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint128",
-        "name": "fund",
-        "type": "uint128"
-      },
-      {
         "internalType": "uint64",
-        "name": "margin",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "endsAt",
+        "name": "settledAt",
         "type": "uint64"
       },
       {
@@ -658,54 +431,6 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "gameId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "odds",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "uint64[]",
-        "name": "outcomes",
-        "type": "uint64[]"
-      },
-      {
-        "internalType": "uint128",
-        "name": "reinforcement",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "margin",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint8",
-        "name": "winningOutcomesCount",
-        "type": "uint8"
-      },
-      {
-        "internalType": "bool",
-        "name": "isExpressForbidden",
-        "type": "bool"
-      }
-    ],
-    "name": "createCondition",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
         "name": "conditionId",
         "type": "uint256"
       }
@@ -715,18 +440,8 @@
       {
         "components": [
           {
-            "internalType": "uint256",
-            "name": "gameId",
-            "type": "uint256"
-          },
-          {
             "internalType": "uint128[]",
             "name": "payouts",
-            "type": "uint128[]"
-          },
-          {
-            "internalType": "uint128[]",
-            "name": "virtualFunds",
             "type": "uint128[]"
           },
           {
@@ -735,23 +450,8 @@
             "type": "uint128"
           },
           {
-            "internalType": "uint128",
-            "name": "reinforcement",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint128",
-            "name": "fund",
-            "type": "uint128"
-          },
-          {
             "internalType": "uint64",
-            "name": "margin",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint64",
-            "name": "endsAt",
+            "name": "settledAt",
             "type": "uint64"
           },
           {
@@ -780,7 +480,7 @@
             "type": "bool"
           }
         ],
-        "internalType": "struct ICondition.Condition",
+        "internalType": "struct IClientCondition.Condition",
         "name": "",
         "type": "tuple"
       }
@@ -889,6 +589,35 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "nonces",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
@@ -972,17 +701,29 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint64[]",
-        "name": "winningOutcomes_",
-        "type": "uint64[]"
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64[]",
+            "name": "winningOutcomes",
+            "type": "uint64[]"
+          },
+          {
+            "internalType": "uint64",
+            "name": "settledAt",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IClientCoreBase.ResolveData[]",
+        "name": "data",
+        "type": "tuple[]"
       }
     ],
-    "name": "resolveCondition",
+    "name": "resolveConditions",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1015,18 +756,48 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "conditionId",
+        "name": "",
         "type": "uint256"
       },
       {
-        "internalType": "bool",
-        "name": "flag",
-        "type": "bool"
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    "name": "stopCondition",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "name": "snapshotTimes",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "snapshots",
+    "outputs": [
+      {
+        "internalType": "uint128",
+        "name": "totalNetBets",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {

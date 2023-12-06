@@ -7,35 +7,6 @@
   {
     "inputs": [
       {
-        "internalType": "enum SafeCast.Type",
-        "name": "to",
-        "type": "uint8"
-      }
-    ],
-    "name": "SafeCastError",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "lp",
-        "type": "address"
-      },
-      {
-        "internalType": "bytes",
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "name": "addLiquidityNative",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "lp",
         "type": "address"
@@ -93,29 +64,6 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "lp",
-        "type": "address"
-      },
-      {
-        "internalType": "uint48",
-        "name": "depositId",
-        "type": "uint48"
-      },
-      {
-        "internalType": "uint40",
-        "name": "percent",
-        "type": "uint40"
-      }
-    ],
-    "name": "withdrawLiquidityNative",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "components": [
           {
             "internalType": "address",
@@ -126,11 +74,6 @@
             "internalType": "uint256",
             "name": "tokenId",
             "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "isNative",
-            "type": "bool"
           }
         ],
         "internalType": "struct IProxyFront.WithdrawPayoutData[]",

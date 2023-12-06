@@ -98,6 +98,12 @@
         "internalType": "address",
         "name": "access",
         "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
       }
     ],
     "name": "NewPool",
@@ -227,12 +233,55 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "minDepo",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint64",
+        "name": "daoFee",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "dataProviderFee",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "affiliateFee",
+        "type": "uint64"
+      },
+      {
+        "internalType": "string",
+        "name": "coreType",
+        "type": "string"
+      }
+    ],
+    "name": "createPoolWithDeployedVault",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "accessBeacon_",
         "type": "address"
       },
       {
         "internalType": "address",
         "name": "lpBeacon_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "vaultBeacon_",
         "type": "address"
       }
     ],
@@ -361,6 +410,19 @@
     "name": "updateCoreType",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "vaultBeacon",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   }
 ]
