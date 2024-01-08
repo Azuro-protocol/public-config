@@ -26,6 +26,11 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectFreeBetContractAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "InsufficientContractBalance",
     "type": "error"
   },
@@ -104,19 +109,6 @@
       }
     ],
     "name": "Initialized",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newLp",
-        "type": "address"
-      }
-    ],
-    "name": "LpChanged",
     "type": "event"
   },
   {
@@ -234,6 +226,11 @@
             "internalType": "uint256",
             "name": "chainId",
             "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "freeBetContract",
+            "type": "address"
           },
           {
             "internalType": "uint256",
@@ -456,19 +453,6 @@
       }
     ],
     "name": "setAffiliate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "lp_",
-        "type": "address"
-      }
-    ],
-    "name": "setLp",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
