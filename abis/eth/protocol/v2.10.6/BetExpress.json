@@ -94,6 +94,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "WrongToken",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
