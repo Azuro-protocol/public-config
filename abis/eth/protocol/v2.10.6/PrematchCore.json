@@ -342,6 +342,25 @@
       {
         "indexed": true,
         "internalType": "uint256",
+        "name": "betId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "margin",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewBetMargin",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
         "name": "conditionId",
         "type": "uint256"
       },
