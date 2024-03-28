@@ -309,6 +309,29 @@
   {
     "inputs": [
       {
+        "internalType": "uint128",
+        "name": "lockedReserve",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "finalReserve",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint48",
+        "name": "depositId",
+        "type": "uint48"
+      }
+    ],
+    "name": "addReserve",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "to",
         "type": "address"
