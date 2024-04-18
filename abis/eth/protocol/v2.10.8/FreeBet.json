@@ -354,6 +354,21 @@
         "internalType": "uint128",
         "name": "payout",
         "type": "uint128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "outcomeId",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "odds",
+        "type": "uint64"
       }
     ],
     "stateMutability": "view",
