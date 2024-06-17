@@ -488,49 +488,61 @@
         "type": "address"
       },
       {
-        "internalType": "uint256",
-        "name": "gameId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "conditionId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "odds",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "uint64[]",
-        "name": "outcomes",
-        "type": "uint64[]"
-      },
-      {
-        "internalType": "uint128",
-        "name": "reinforcement",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "margin",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint8",
-        "name": "winningOutcomesCount",
-        "type": "uint8"
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "odds",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint64[]",
+            "name": "outcomes",
+            "type": "uint64[]"
+          },
+          {
+            "internalType": "uint128",
+            "name": "reinforcement",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint64",
+            "name": "margin",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint8",
+            "name": "winningOutcomesCount",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isExpressForbidden",
+            "type": "bool"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IProxyOracle.CreateConditionData",
+        "name": "data",
+        "type": "tuple"
       },
       {
         "internalType": "uint64",
         "name": "proposeDeadline",
         "type": "uint64"
-      },
-      {
-        "internalType": "bool",
-        "name": "isExpressForbidden",
-        "type": "bool"
       }
     ],
     "name": "createCondition",

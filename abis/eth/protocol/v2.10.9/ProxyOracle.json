@@ -297,6 +297,11 @@
             "internalType": "bool",
             "name": "isExpressForbidden",
             "type": "bool"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
           }
         ],
         "internalType": "struct IProxyOracle.CreateConditionData[]",
