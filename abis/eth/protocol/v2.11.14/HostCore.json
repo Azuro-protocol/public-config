@@ -1,0 +1,778 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "CantChangeFlag",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionAlreadyCreated",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionAlreadyResolved",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionNotExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ConditionNotRunning",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GameAlreadyCreated",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GameAlreadyEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "GameNotExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectAccess",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectCondition",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectGameId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectTimestamp",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "IncorrectWinningOutcomesCount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WrongOutcome",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "access_",
+        "type": "address"
+      }
+    ],
+    "name": "AccessChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64[]",
+        "name": "outcomes",
+        "type": "uint64[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "winningOutcomesCount",
+        "type": "uint8"
+      }
+    ],
+    "name": "ConditionCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "state",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64[]",
+        "name": "winningOutcomes",
+        "type": "uint64[]"
+      }
+    ],
+    "name": "ConditionResolved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "flag",
+        "type": "bool"
+      }
+    ],
+    "name": "ConditionStopped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "CreatedConditionMetadata",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "enum IHostCore.GameState",
+        "name": "state",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
+      }
+    ],
+    "name": "GameUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "NewGame",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "access",
+    "outputs": [
+      {
+        "internalType": "contract IAccess",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "conditionIds",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "cancelConditions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "access_",
+        "type": "address"
+      }
+    ],
+    "name": "changeAccess",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "checkAccess",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "checkOwner",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "conditions",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "endsAt",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint8",
+        "name": "winningOutcomesCount",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum IConditionState.ConditionState",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64[]",
+            "name": "outcomes",
+            "type": "uint64[]"
+          },
+          {
+            "internalType": "uint8",
+            "name": "winningOutcomesCount",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IHostCore.ConditionData[]",
+        "name": "conditionsData",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "createConditions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "startsAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IHostCore.CreateGameData[]",
+        "name": "createGamesData",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "createGames",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "games",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "startsAt",
+        "type": "uint64"
+      },
+      {
+        "internalType": "enum IHostCore.GameState",
+        "name": "state",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getCondition",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "odds",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint64[]",
+            "name": "outcomes",
+            "type": "uint64[]"
+          },
+          {
+            "internalType": "uint64",
+            "name": "endsAt",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint8",
+            "name": "winningOutcomesCount",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum IConditionState.ConditionState",
+            "name": "state",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct IHostCondition.Condition",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "gameId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getGameInfo",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "",
+        "type": "uint64"
+      },
+      {
+        "internalType": "enum IHostCore.GameState",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "outcome",
+        "type": "uint64"
+      }
+    ],
+    "name": "getOutcomeIndex",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "access_",
+        "type": "address"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      }
+    ],
+    "name": "isConditionCanceled",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "conditionId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "outcome",
+        "type": "uint64"
+      }
+    ],
+    "name": "isOutcomeWinning",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "outcomeNumbers",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64[]",
+            "name": "winningOutcomes",
+            "type": "uint64[]"
+          }
+        ],
+        "internalType": "struct IHostCore.ResolveData[]",
+        "name": "resolvesData",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "resolveConditions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "conditionId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "flag",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct IHostCore.StopConditionData[]",
+        "name": "stopConditionsData",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "stopConditions",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "gameId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum IHostCore.GameState",
+            "name": "state",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "startsAt",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IHostCore.UpdateGameData[]",
+        "name": "updateGamesData",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "updateGames",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "winningOutcomes",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
