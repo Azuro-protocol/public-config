@@ -47,6 +47,11 @@
   },
   {
     "inputs": [],
+    "name": "IncorrectAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "IncorrectCoreState",
     "type": "error"
   },
@@ -737,22 +742,12 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
-      },
-      {
-        "internalType": "uint128",
-        "name": "amount",
-        "type": "uint128"
-      },
-      {
-        "internalType": "uint64",
-        "name": "expiresAt",
-        "type": "uint64"
-      },
-      {
         "components": [
+          {
+            "internalType": "address",
+            "name": "core",
+            "type": "address"
+          },
           {
             "internalType": "address",
             "name": "affiliate",
@@ -761,6 +756,16 @@
           {
             "internalType": "uint64",
             "name": "minOdds",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint64",
+            "name": "expiresAt",
             "type": "uint64"
           },
           {
@@ -793,22 +798,17 @@
         "type": "address"
       },
       {
-        "internalType": "address",
-        "name": "core",
-        "type": "address"
-      },
-      {
         "internalType": "uint128",
         "name": "amount",
         "type": "uint128"
       },
       {
-        "internalType": "uint64",
-        "name": "expiresAt",
-        "type": "uint64"
-      },
-      {
         "components": [
+          {
+            "internalType": "address",
+            "name": "core",
+            "type": "address"
+          },
           {
             "internalType": "address",
             "name": "affiliate",
@@ -820,22 +820,32 @@
             "type": "uint64"
           },
           {
+            "internalType": "uint128",
+            "name": "amount",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint64",
+            "name": "expiresAt",
+            "type": "uint64"
+          },
+          {
             "internalType": "bytes",
             "name": "data",
             "type": "bytes"
           }
         ],
-        "internalType": "struct IBet.BetData",
-        "name": "betData",
-        "type": "tuple"
+        "internalType": "struct IBet.BetData[]",
+        "name": "betsData",
+        "type": "tuple[]"
       }
     ],
-    "name": "betFor",
+    "name": "betBatchFor",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "uint256[]",
         "name": "",
-        "type": "uint256"
+        "type": "uint256[]"
       }
     ],
     "stateMutability": "nonpayable",
