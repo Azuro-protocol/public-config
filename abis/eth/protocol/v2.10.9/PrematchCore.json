@@ -993,27 +993,12 @@
         "components": [
           {
             "internalType": "address",
-            "name": "core",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
             "name": "affiliate",
             "type": "address"
           },
           {
             "internalType": "uint64",
             "name": "minOdds",
-            "type": "uint64"
-          },
-          {
-            "internalType": "uint128",
-            "name": "amount",
-            "type": "uint128"
-          },
-          {
-            "internalType": "uint64",
-            "name": "expiresAt",
             "type": "uint64"
           },
           {

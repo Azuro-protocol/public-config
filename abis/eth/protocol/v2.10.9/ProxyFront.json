@@ -56,16 +56,6 @@
             "type": "address"
           },
           {
-            "internalType": "address",
-            "name": "affiliate",
-            "type": "address"
-          },
-          {
-            "internalType": "uint64",
-            "name": "minOdds",
-            "type": "uint64"
-          },
-          {
             "internalType": "uint128",
             "name": "amount",
             "type": "uint128"
@@ -76,12 +66,29 @@
             "type": "uint64"
           },
           {
-            "internalType": "bytes",
-            "name": "data",
-            "type": "bytes"
+            "components": [
+              {
+                "internalType": "address",
+                "name": "affiliate",
+                "type": "address"
+              },
+              {
+                "internalType": "uint64",
+                "name": "minOdds",
+                "type": "uint64"
+              },
+              {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+              }
+            ],
+            "internalType": "struct IBet.BetData",
+            "name": "extraData",
+            "type": "tuple"
           }
         ],
-        "internalType": "struct IBet.BetData[]",
+        "internalType": "struct IProxyFront.BetData[]",
         "name": "data",
         "type": "tuple[]"
       }
