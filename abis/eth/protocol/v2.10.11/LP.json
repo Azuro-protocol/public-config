@@ -116,6 +116,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "OnlyMigrateAdmin",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "enum SafeCast.Type",
@@ -1423,6 +1428,43 @@
   },
   {
     "inputs": [],
+    "name": "migrateAdmin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "depositId",
+        "type": "uint48"
+      }
+    ],
+    "name": "migrateLiquidityFrom",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "depositOwner",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "withdrawnAmount",
+        "type": "uint128"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "minDepo",
     "outputs": [
       {
@@ -1600,6 +1642,19 @@
       }
     ],
     "name": "setApprovalForAll",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "migrateAdmin_",
+        "type": "address"
+      }
+    ],
+    "name": "setMigrateAdmin",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
