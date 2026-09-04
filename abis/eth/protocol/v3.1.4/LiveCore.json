@@ -1028,13 +1028,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "initializeV2",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
